@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Magical Savannah - East African Travel Experiences</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hunter-green': '#2C5F2D',
+                        'hunter-green-light': '#3a7a3c',
+                        'black': '#090909',
+                        'pale-dogwood': '#E7CFCD',
+                        'tea-green': '#D7FCD4',
+                        'moonstone': '#69A2B0',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .organic-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(44, 95, 45, 0.5), rgba(44, 95, 45, 0.5)), url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .hover-grow {
+            transition: transform 0.3s ease;
+        }
+        .hover-grow:hover {
+            transform: scale(1.03);
+        }
+        .emoji-option:hover {
+            transform: scale(1.2);
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-body text-black bg-pale-dogwood">
+    <!-- Navigation -->
+    <nav class="bg-hunter-green text-tea-green px-4 lg:px-6 py-4 sticky top-0 z-50">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <a href="#" class="flex items-center">
+                <span class="font-heading text-2xl font-semibold">The Magical Savannah</span>
+            </a>
+            <div class="flex items-center lg:order-2">
+                <a href="#" class="text-tea-green hover:bg-hunter-green-light hover:text-white px-4 py-2 rounded-lg transition duration-300 mr-2">Login</a>
+                <a href="#" class="text-white bg-moonstone hover:bg-hunter-green-light px-4 py-2 rounded-lg transition duration-300">Sign up</a>
+                <button id="mobile-menu-button" class="lg:hidden ml-2 text-tea-green">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
+                <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                    <li>
+                        <a href="#" class="block py-2 pr-4 pl-3 text-tea-green rounded lg:bg-transparent lg:p-0" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 pr-4 pl-3 text-tea-green rounded hover:bg-hunter-green-light hover:text-white lg:hover:bg-transparent lg:hover:text-moonstone lg:p-0">Trips</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 pr-4 pl-3 text-tea-green rounded hover:bg-hunter-green-light hover:text-white lg:hover:bg-transparent lg:hover:text-moonstone lg:p-0">Experiences</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 pr-4 pl-3 text-tea-green rounded hover:bg-hunter-green-light hover:text-white lg:hover:bg-transparent lg:hover:text-moonstone lg:p-0">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 pr-4 pl-3 text-tea-green rounded hover:bg-hunter-green-light hover:text-white lg:hover:bg-transparent lg:hover:text-moonstone lg:p-0">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="font-heading text-4xl md:text-6xl font-bold mb-6 animate-fade-in">Make Memories, Not Just Trips</h1>
+            <p class="text-xl md:text-2xl mb-8">Discover curated adventures across Kenya and Tanzania, guided by emotion, connection, and magic.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-moonstone hover:bg-hunter-green-light text-white font-medium rounded-lg px-8 py-3 text-center transition duration-300">Explore Trips</a>
+                <a href="#" class="border-2 border-white hover:bg-white hover:text-hunter-green text-white font-medium rounded-lg px-8 py-3 text-center transition duration-300">Surprise Me</a>
+            </div>
+            <div class="mt-12 flex justify-center space-x-6 opacity-70">
+                <i class="fas fa-campground text-xl animate-float"></i>
+                <i class="fas fa-compass text-xl animate-float" style="animation-delay: 0.2s"></i>
+                <i class="fas fa-star text-xl animate-float" style="animation-delay: 0.4s"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We're Different Section -->
+    <section class="py-16 px-4 bg-tea-green">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl text-center mb-16 text-hunter-green">We Don't Sell Destinations. We Sell Feelings.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-grow transition duration-300">
+                    <div class="text-4xl mb-4">🌍</div>
+                    <h3 class="font-heading text-xl font-semibold mb-2">Emotion-Based Recommendations</h3>
+                    <p class="text-gray-700">Tell us how you want to feel, and we'll craft the perfect adventure tailored to your emotional needs.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-grow transition duration-300">
+                    <div class="text-4xl mb-4">🧑‍🤝‍🧑</div>
+                    <h3 class="font-heading text-xl font-semibold mb-2">Join Group Tours</h3>
+                    <p class="text-gray-700">Meet like-minded travelers or find your perfect travel companion with our carefully curated group experiences.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-grow transition duration-300">
+                    <div class="text-4xl mb-4">🎒</div>
+                    <h3 class="font-heading text-xl font-semibold mb-2">Customized Itineraries</h3>
+                    <p class="text-gray-700">From luxury safaris to mystery adventures, we design journeys that surprise and delight.</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-grow transition duration-300">
+                    <div class="text-4xl mb-4">⭐</div>
+                    <h3 class="font-heading text-xl font-semibold mb-2">Memory-Making Moments</h3>
+                    <p class="text-gray-700">Stargazing, storytelling, and unforgettable experiences that become lifelong memories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Experience Finder Section (Updated) -->
+<section class="py-16 px-4 bg-pale-dogwood">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="font-heading text-3xl text-center mb-12 text-hunter-green">How do you want to feel?</h2>
+        <div class="flex overflow-x-auto pb-6 scrollbar-hide space-x-4">
+            <!-- Emotion Options - Updated Colors -->
+            <div class="emoji-option flex-shrink-0 w-32 h-32 bg-white rounded-full flex flex-col items-center justify-center shadow-md cursor-pointer transition duration-300 hover:bg-moonstone hover:text-white">
+                <span class="text-4xl mb-2">🧡</span>
+                <span class="font-medium">Joyful</span>
+            </div>
+            <div class="emoji-option flex-shrink-0 w-32 h-32 bg-white rounded-full flex flex-col items-center justify-center shadow-md cursor-pointer transition duration-300 hover:bg-hunter-green hover:text-white">
+                <span class="text-4xl mb-2">🌿</span>
+                <span class="font-medium">Peaceful</span>
+            </div>
+            <div class="emoji-option flex-shrink-0 w-32 h-32 bg-white rounded-full flex flex-col items-center justify-center shadow-md cursor-pointer transition duration-300 hover:bg-hunter-green-light hover:text-white">
+                <span class="text-4xl mb-2">💫</span>
+                <span class="font-medium">Romantic</span>
+            </div>
+            <div class="emoji-option flex-shrink-0 w-32 h-32 bg-white rounded-full flex flex-col items-center justify-center shadow-md cursor-pointer transition duration-300 hover:bg-moonstone hover:text-white">
+                <span class="text-4xl mb-2">🔥</span>
+                <span class="font-medium">Wild</span>
+            </div>
+            <div class="emoji-option flex-shrink-0 w-32 h-32 bg-white rounded-full flex flex-col items-center justify-center shadow-md cursor-pointer transition duration-300 hover:bg-hunter-green hover:text-white">
+                <span class="text-4xl mb-2">🕊️</span>
+                <span class="font-medium">Healed</span>
+            </div>
+        </div>
+        
+        <!-- Results (hidden until emotion is selected) -->
+        <div id="emotion-results" class="mt-12 hidden">
+            <h3 class="font-heading text-xl mb-6 text-center">Experiences that bring you <span id="selected-emotion" class="text-moonstone">joy</span></h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Example trip cards would appear here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Featured Adventures -->
+    <section class="py-16 px-4 bg-tea-green">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl text-center mb-12 text-hunter-green">Featured Adventures</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Trip 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover-grow transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1583422409516-289911ce76e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Mount Kenya Retreat" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-semibold mb-2">Healing on the Hills – Mount Kenya Retreat</h3>
+                        <div class="flex items-center space-x-4 mb-4 text-gray-600">
+                            <span class="flex items-center"><i class="fas fa-user-friends mr-1"></i> 8-12</span>
+                            <span class="flex items-center"><i class="fas fa-heart mr-1"></i> Chill</span>
+                            <span class="flex items-center"><i class="fas fa-arrow-up mr-1"></i> Moderate</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">A 5-day wellness retreat combining yoga, meditation, and nature therapy in the foothills of Mount Kenya.</p>
+                        <a href="#" class="text-moonstone font-medium hover:text-hunter-green transition duration-300 flex items-center">
+                            See Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Trip 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover-grow transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Serengeti Migration" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-semibold mb-2">The Great Migration Safari</h3>
+                        <div class="flex items-center space-x-4 mb-4 text-gray-600">
+                            <span class="flex items-center"><i class="fas fa-user-friends mr-1"></i> 6-8</span>
+                            <span class="flex items-center"><i class="fas fa-bolt mr-1"></i> Wild</span>
+                            <span class="flex items-center"><i class="fas fa-arrow-up mr-1"></i> Easy</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">Witness one of nature's greatest spectacles in Tanzania's Serengeti with expert guides and luxury camping.</p>
+                        <a href="#" class="text-moonstone font-medium hover:text-hunter-green transition duration-300 flex items-center">
+                            See Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Trip 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover-grow transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80" alt="Swahili Coast" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-semibold mb-2">Swahili Coast Cultural Journey</h3>
+                        <div class="flex items-center space-x-4 mb-4 text-gray-600">
+                            <span class="flex items-center"><i class="fas fa-user-friends mr-1"></i> 10-15</span>
+                            <span class="flex items-center"><i class="fas fa-umbrella-beach mr-1"></i> Luxe</span>
+                            <span class="flex items-center"><i class="fas fa-arrow-right mr-1"></i> Relaxed</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">Explore the rich history, cuisine, and beaches of Kenya's coast from Lamu to Diani with local experts.</p>
+                        <a href="#" class="text-moonstone font-medium hover:text-hunter-green transition duration-300 flex items-center">
+                            See Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="bg-moonstone hover:bg-hunter-green-light text-white font-medium rounded-lg px-8 py-3 inline-block transition duration-300">View All Adventures</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Match Section -->
+    <section class="py-16 px-4 bg-hunter-green text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-heading text-3xl mb-6">TravelMatch™ – Like Tinder, But for Trips</h2>
+            <p class="text-xl mb-8">Find your perfect travel companions based on personality, interests, and travel style.</p>
+            
+            <div class="bg-white/20 rounded-xl p-6 mb-10">
+                <div class="flex justify-center space-x-4 mb-6">
+                    <div class="w-24 h-24 rounded-full bg-cover bg-center" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg')"></div>
+                    <div class="flex items-center text-4xl">❤️</div>
+                    <div class="w-24 h-24 rounded-full bg-cover bg-center" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg')"></div>
+                </div>
+                <p class="italic">"We matched on TravelMatch and now we're adventure buddies for life!"</p>
+                <p class="font-semibold mt-2">- Sarah & James, Tanzania Safari</p>
+            </div>
+            
+            <a href="#" class="bg-white text-hunter-green hover:bg-tea-green hover:text-hunter-green font-medium rounded-lg px-8 py-3 inline-block transition duration-300">Meet Travel Buddies</a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 px-4 bg-pale-dogwood">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-heading text-3xl text-center mb-12 text-hunter-green">Stories From Our Travelers</h2>
+            
+            <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 rounded-full bg-cover bg-center mr-4" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg')"></div>
+                    <div>
+                        <h4 class="font-heading font-semibold">Aisha K.</h4>
+                        <p class="text-gray-600">Maasai Mara Photography Tour</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic mb-4">"I came for the wildlife photography but left with so much more. The connections with the Maasai community, the nights around the fire sharing stories, and the incredible guides who knew exactly where to find the perfect light. This wasn't a tour—it was a transformation."</p>
+                <div class="flex justify-between items-center">
+                    <div class="flex text-moonstone">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="bg-hunter-green-light text-white text-xs font-semibold px-2 py-1 rounded">Story of the Month</span>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="text-moonstone font-medium hover:text-hunter-green transition duration-300 flex items-center justify-center">
+                    Share Your Story – Win a Free Trip <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 px-4 bg-tea-green">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="font-heading text-3xl mb-4 text-hunter-green">Don't Just Watch the Magic. Be Part of It.</h2>
+            <p class="text-gray-700 mb-8">Join our community for trip updates, exclusive giveaways, and curated experiences designed to move you.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border border-hunter-green/30 focus:outline-none focus:ring-2 focus:ring-moonstone">
+                <button type="submit" class="bg-moonstone hover:bg-hunter-green-light text-white font-medium rounded-lg px-6 py-3 transition duration-300">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 px-4 bg-hunter-green text-white text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl mb-6">Adventure is one click away. Where will your heart take you?</h2>
+            <a href="#" class="bg-tea-green hover:bg-white text-hunter-green font-medium rounded-lg px-8 py-4 text-lg inline-block transition duration-300">Start Exploring</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-tea-green py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-heading text-xl font-semibold mb-4">The Magical Savannah</h3>
+                    <p class="mb-4">Crafting unforgettable experiences across East Africa since 2018.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-moonstone transition duration-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-moonstone transition duration-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-moonstone transition duration-300"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">All Trips</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">Group Tours</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">Private Journeys</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">Our Story</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">Blog</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">FAQ</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">Safety</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition duration-300">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-tea-green/30 mt-12 pt-8 text-center text-sm">
+                <p>© 2023 The Magical Savannah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Widget -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button class="bg-moonstone hover:bg-hunter-green-light text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300">
+            <i class="fas fa-comment-dots text-xl"></i>
+        </button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Emotion selector functionality
+        const emotionOptions = document.querySelectorAll('.emoji-option');
+        const emotionResults = document.getElementById('emotion-results');
+        const selectedEmotion = document.getElementById('selected-emotion');
+        
+        emotionOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const emotion = this.querySelector('span:last-child').textContent;
+                selectedEmotion.textContent = emotion.toLowerCase();
+                emotionResults.classList.remove('hidden');
+                
+                // Remove all active classes first
+                emotionOptions.forEach(opt => {
+                    opt.classList.remove('bg-moonstone', 'bg-hunter-green', 'bg-pink-400', 'bg-red-500', 'bg-blue-400');
+                    opt.classList.add('bg-white');
+                });
+                
+                // Add appropriate color based on emotion
+                if (emotion === 'Joyful') this.classList.add('bg-moonstone');
+                if (emotion === 'Peaceful') this.classList.add('bg-hunter-green');
+                if (emotion === 'Romantic') this.classList.add('bg-pink-400');
+                if (emotion === 'Wild') this.classList.add('bg-red-500');
+                if (emotion === 'Healed') this.classList.add('bg-blue-400');
+                
+                this.classList.remove('bg-white');
+            });
+        });
+    </script>
+</body>
+</html>

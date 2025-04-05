@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Savannah | Premium Safari Experiences</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(22, 101, 52, 0.9) 0%, rgba(58, 122, 71, 0.8) 100%);
+        }
+    </style>
+</head>
+<body class="bg-white antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white fixed w-full z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-green-800 heading-font">Magical Savannah</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#" class="text-gray-700 hover:text-green-700 transition-colors">Destinations</a>
+                    <a href="#" class="text-gray-700 hover:text-green-700 transition-colors">Experiences</a>
+                    <a href="#" class="text-gray-700 hover:text-green-700 transition-colors">About</a>
+                    <a href="#" class="text-gray-700 hover:text-green-700 transition-colors">Journal</a>
+                </div>
+                <div class="flex items-center">
+                    <button class="px-5 py-2.5 bg-green-700 rounded-full text-sm font-medium text-white hover:bg-green-800 transition-colors">
+                        Plan Your Trip
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative pt-24 pb-32 px-4 sm:px-6 lg:px-8">
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                 alt="African Sunset" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <div class="relative max-w-4xl mx-auto text-center text-white pt-16">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 heading-font leading-tight">
+                Where the Wild <span class="italic">Still</span> Roams
+            </h1>
+            <p class="text-xl md:text-2xl text-green-100 max-w-2xl mx-auto mb-10">
+                Immersive safari experiences that connect you with Africa's untouched beauty
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="px-8 py-3 border-2 border-white text-base font-medium rounded-full text-white hover:bg-white hover:bg-opacity-10 transition-colors">
+                    Explore Safaris
+                </button>
+                <button class="px-8 py-3 border-2 border-white text-base font-medium rounded-full bg-white text-green-800 hover:bg-green-50 transition-colors">
+                    Custom Inquiry
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Destinations Section -->
+    <div class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 heading-font">Our Signature Destinations</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                From the Serengeti to the Okavango, discover Africa's most breathtaking landscapes
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="relative group overflow-hidden rounded-xl h-96">
+                <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                     alt="Okavango Delta" 
+                     class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                    <h3 class="text-2xl font-bold mb-1 heading-font">Okavango Delta</h3>
+                    <p class="text-green-200 mb-3">Botswana</p>
+                    <button class="text-sm font-medium text-white hover:text-green-300 transition-colors flex items-center">
+                        Explore <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="relative group overflow-hidden rounded-xl h-96">
+                <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" 
+                     alt="Serengeti Plains" 
+                     class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                    <h3 class="text-2xl font-bold mb-1 heading-font">Serengeti Plains</h3>
+                    <p class="text-green-200 mb-3">Tanzania</p>
+                    <button class="text-sm font-medium text-white hover:text-green-300 transition-colors flex items-center">
+                        Explore <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="relative group overflow-hidden rounded-xl h-96">
+                <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                     alt="Maasai Mara" 
+                     class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                    <h3 class="text-2xl font-bold mb-1 heading-font">Maasai Mara</h3>
+                    <p class="text-green-200 mb-3">Kenya</p>
+                    <button class="text-sm font-medium text-white hover:text-green-300 transition-colors flex items-center">
+                        Explore <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Types -->
+    <div class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 heading-font">Tailored Safari Experiences</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Whether you seek adventure, luxury, or family-friendly exploration
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-camera text-green-700 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 heading-font">Photography Safaris</h3>
+                    <p class="text-gray-600 mb-4">
+                        Expert-led tours designed for capturing Africa's wildlife at the perfect moments.
+                    </p>
+                    <a href="#" class="text-green-700 font-medium hover:text-green-800 inline-flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-gem text-green-700 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 heading-font">Luxury Expeditions</h3>
+                    <p class="text-gray-600 mb-4">
+                        Five-star lodges and private guides for the most discerning travelers.
+                    </p>
+                    <a href="#" class="text-green-700 font-medium hover:text-green-800 inline-flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-child text-green-700 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 heading-font">Family Adventures</h3>
+                    <p class="text-gray-600 mb-4">
+                        Educational and exciting safaris designed for all ages.
+                    </p>
+                    <a href="#" class="text-green-700 font-medium hover:text-green-800 inline-flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="py-20 px-4 sm:px-6 lg:px-8 bg-green-800 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <i class="fas fa-quote-left text-green-500 text-3xl mb-8"></i>
+            <blockquote class="text-xl md:text-2xl font-light italic mb-8">
+                "Magical Savannah crafted an experience that went beyond our wildest dreams. From tracking lions at dawn to stargazing in the bush, every moment felt authentically African and deeply personal."
+            </blockquote>
+            <div class="flex items-center justify-center">
+                <img class="h-12 w-12 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K.">
+                <div class="ml-4 text-left">
+                    <p class="font-medium">Sarah K.</p>
+                    <p class="text-green-200 text-sm">Kenya & Tanzania Safari, 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="md:flex">
+                <div class="md:w-1/2 p-10 bg-green-700 text-white">
+                    <h3 class="text-2xl font-bold mb-4 heading-font">Begin Your Journey</h3>
+                    <p class="mb-6 text-green-100">
+                        Our safari specialists are ready to design your perfect African adventure.
+                    </p>
+                    <div class="space-y-3">
+                        <p class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-green-300"></i>
+                            +1 (800) 555-8726
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-300"></i>
+                            explore@magicalsavannah.com
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 p-10">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 heading-font">Request Information</h3>
+                    <form>
+                        <div class="mb-4">
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" placeholder="Email Address" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <textarea placeholder="Tell us about your dream safari" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors">
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div>
+                    <h4 class="text-xl font-bold mb-4 heading-font">Magical Savannah</h4>
+                    <p class="text-gray-400 mb-6">
+                        Creating transformative African travel experiences since 2008.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Destinations</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">East Africa</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Southern Africa</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Private Reserves</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">All Destinations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Experiences</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Luxury Safaris</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Family Travel</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Photography</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">All Experiences</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Company</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sustainability</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2023 Magical Savannah. All rights reserved.
+                </p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

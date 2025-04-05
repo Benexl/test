@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Magical Savannah | Luxury Kenyan Safaris & Travel</title>
+    <meta name="description" content="Experience Kenya through bespoke safaris, cultural journeys, and pristine beaches. Curated luxury travel by local experts.">
+    
+    <!-- Flowbite CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --hunter-green: #2C5F2D;
+            --black: #090909;
+            --pale-dogwood: #E7CFCD;
+            --tea-green: #D7FCD4;
+            --moonstone: #69A2B0;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--black);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Navigation - Fixed to top */
+        nav {
+            background: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--hunter-green);
+        }
+        
+        .nav-links a {
+            color: var(--black);
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--hunter-green);
+        }
+        
+        /* Hero Carousel */
+        .hero-carousel {
+            height: 90vh;
+            position: relative;
+            margin-top: 64px; /* Account for fixed nav */
+        }
+        
+        .carousel-image {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 80%;
+            max-width: 800px;
+            z-index: 10;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* CTA Button - More refined */
+        .cta-button {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            color: var(--hunter-green);
+        }
+        
+        /* Special hover effect for "Begin Your Journey" */
+        .nav-cta {
+            background: var(--hunter-green);
+            color: white;
+            border: 2px solid var(--hunter-green);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+        }
+        
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--hunter-green);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(44, 95, 45, 0.3);
+        }
+        
+        /* Carousel customizations */
+        .carousel-indicators button {
+            width: 12px !important;
+            height: 12px !important;
+            border-radius: 50% !important;
+            margin: 0 5px !important;
+        }
+        
+        .carousel-indicators button[aria-current="true"] {
+            background-color: var(--hunter-green) !important;
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--hunter-green);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 2px;
+            background: var(--moonstone);
+            margin: 0.5rem auto 0;
+        }
+        
+        /* Destination Cards */
+        .destination-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .destination-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .destination-card:hover .destination-image {
+            transform: scale(1.05);
+        }
+        
+        /* Animated Explore Link */
+        .explore-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--hunter-green);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .explore-link svg {
+            transition: transform 0.3s ease;
+        }
+        
+        .destination-card:hover .explore-link {
+            color: var(--moonstone);
+        }
+        
+        .destination-card:hover .explore-link svg {
+            transform: translateX(5px);
+        }
+        
+        /* Theme Cards with Visual Action */
+        .theme-card {
+            height: 300px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .theme-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .theme-card:hover .theme-image {
+            transform: scale(1.1);
+        }
+        
+        .theme-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .theme-card:hover .theme-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Visual action indicator */
+        .theme-action {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.9);
+            color: var(--hunter-green);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.4s ease;
+        }
+        
+        .theme-card:hover .theme-action {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: var(--hunter-green);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .final-cta .cta-button {
+            border-color: white;
+            margin-top: 2rem;
+        }
+        
+        /* Footer - Full width */
+        footer {
+            background: var(--black);
+            color: white;
+            padding: 4rem 0 2rem;
+            width: 100%;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-links h4:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 30px;
+            height: 2px;
+            background: var(--moonstone);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation - Fixed to top -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">The Magical Savannah</div>
+            <div class="nav-links hidden md:block">
+                <a href="#">Home</a>
+                <a href="#">Destinations</a>
+                <a href="#">Experiences</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <button class="nav-cta hidden md:block">Begin Your Journey</button>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <div id="default-carousel" class="relative hero-carousel" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-full overflow-hidden">
+            <!-- Item 1 - Savannah Sunset -->
+            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Savannah Sunset">
+                <div class="hero-content">
+                    <h1 class="hero-title">Where the Wild Still Roams Free</h1>
+                    <p class="hero-subtitle">Experience Kenya's untouched wilderness through our exclusive safaris</p>
+                    <button class="cta-button">Discover Safaris</button>
+                </div>
+            </div>
+            <!-- Item 2 - Safari Adventure -->
+            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Safari Adventure">
+                <div class="hero-content">
+                    <h1 class="hero-title">Adventure Awaits in the Heart of Africa</h1>
+                    <p class="hero-subtitle">Tailored safari experiences for the discerning traveler</p>
+                    <button class="cta-button">Plan Your Adventure</button>
+                </div>
+            </div>
+            <!-- Item 3 - Maasai Culture -->
+            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Maasai Culture">
+                <div class="hero-content">
+                    <h1 class="hero-title">Immerse Yourself in Ancient Traditions</h1>
+                    <p class="hero-subtitle">Authentic cultural experiences with Kenya's indigenous communities</p>
+                    <button class="cta-button">Explore Culture</button>
+                </div>
+            </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3" data-carousel-indicators>
+            <button type="button" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+
+    <!-- Destinations Section -->
+    <section class="section">
+        <h2 class="section-title">Our Curated Destinations</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Destination 1 - Maasai Mara -->
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Maasai Mara" class="destination-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Maasai Mara</h3>
+                    <p class="text-gray-600 mb-4">Witness the spectacular Great Migration in this wildlife paradise.</p>
+                    <a href="#" class="explore-link">
+                        Explore <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Destination 2 - Amboseli -->
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1589561454226-796a8e9f8b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Amboseli National Park" class="destination-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Amboseli</h3>
+                    <p class="text-gray-600 mb-4">Where elephants roam beneath Kilimanjaro's snow-capped peak.</p>
+                    <a href="#" class="explore-link">
+                        Explore <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Destination 3 - Samburu -->
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1526281216101-e7b5ccdf4a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Samburu National Reserve" class="destination-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Samburu</h3>
+                    <p class="text-gray-600 mb-4">Discover rare wildlife species in Kenya's rugged northern frontier.</p>
+                    <a href="#" class="explore-link">
+                        Explore <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Themes Section -->
+    <section class="section bg-gray-50">
+        <h2 class="section-title">Find Your Perfect Experience</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Theme 1 - Luxury Safaris -->
+            <div class="theme-card">
+                <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Luxury Safaris" class="theme-image">
+                <div class="theme-action">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="theme-overlay">
+                    <h3 class="text-lg font-bold">Luxury Safaris</h3>
+                    <p class="text-sm mt-1">Private game drives & luxury lodges</p>
+                </div>
+            </div>
+            
+            <!-- Theme 2 - Cultural Immersion -->
+            <div class="theme-card">
+                <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Cultural Immersion" class="theme-image">
+                <div class="theme-action">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="theme-overlay">
+                    <h3 class="text-lg font-bold">Cultural Immersion</h3>
+                    <p class="text-sm mt-1">Authentic experiences with local communities</p>
+                </div>
+            </div>
+            
+            <!-- Theme 3 - Beach Retreats -->
+            <div class="theme-card">
+                <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Beach Retreats" class="theme-image">
+                <div class="theme-action">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="theme-overlay">
+                    <h3 class="text-lg font-bold">Beach Retreats</h3>
+                    <p class="text-sm mt-1">Pristine Indian Ocean shores</p>
+                </div>
+            </div>
+            
+            <!-- Theme 4 - Adventure Trekking -->
+            <div class="theme-card">
+                <img src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Adventure Trekking" class="theme-image">
+                <div class="theme-action">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="theme-overlay">
+                    <h3 class="text-lg font-bold">Adventure Trekking</h3>
+                    <p class="text-sm mt-1">Conquer majestic peaks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section">
+        <h2 class="section-title">Traveler Stories</h2>
+        <div class="flex overflow-x-auto pb-6 -mx-4 px-4">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card flex-shrink-0 w-80">
+                <div class="flex items-center mb-4">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Sarah M." class="w-12 h-12 rounded-full mr-4 object-cover">
+                    <div>
+                        <h4 class="font-bold">Sarah M.</h4>
+                        <p class="text-gray-600 text-sm">New York</p>
+                    </div>
+                </div>
+                <p class="italic">"The Magical Savannah crafted an unforgettable honeymoon. Every detail was perfect, from the private safari guides to the beachfront villa in Lamu."</p>
+                <div class="mt-4 text-yellow-400">
+                    ★★★★★
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card flex-shrink-0 w-80">
+                <div class="flex items-center mb-4">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="James K." class="w-12 h-12 rounded-full mr-4 object-cover">
+                    <div>
+                        <h4 class="font-bold">James K.</h4>
+                        <p class="text-gray-600 text-sm">London</p>
+                    </div>
+                </div>
+                <p class="italic">"As a solo traveler, I felt completely safe and cared for. The cultural immersion with Maasai communities was life-changing."</p>
+                <div class="mt-4 text-yellow-400">
+                    ★★★★★
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card flex-shrink-0 w-80">
+                <div class="flex items-center mb-4">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Amina W." class="w-12 h-12 rounded-full mr-4 object-cover">
+                    <div>
+                        <h4 class="font-bold">Amina W.</h4>
+                        <p class="text-gray-600 text-sm">Nairobi</p>
+                    </div>
+                </div>
+                <p class="italic">"I thought I knew Kenya until The Magical Savannah showed me hidden gems even locals don't know about. Exceptional service!"</p>
+                <div class="mt-4 text-yellow-400">
+                    ★★★★★
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to Write Your Kenyan Story?</h2>
+            <p class="text-lg mb-6">Let's craft a journey as unique as you are.</p>
+            <button class="cta-button">Begin Your Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">The Magical Savannah</div>
+                <p>Kenya's premier luxury travel curator, crafting unforgettable experiences since 2010.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#">Safari Experiences</a></li>
+                    <li><a href="#">Beach Retreats</a></li>
+                    <li><a href="#">Cultural Journeys</a></li>
+                    <li><a href="#">Adventure Treks</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Guides</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Booking Terms</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2024 The Magical Savannah. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script>
+        // Initialize carousel with slower transition and pause on hover
+        const carousel = new Flowbite.Carousel(document.getElementById('default-carousel'), {
+            interval: 6000, // Slower rotation (6 seconds)
+            pause: 'hover' // Pause on hover
+        });
+        
+        // Custom hover effect for explore links
+        document.querySelectorAll('.explore-link').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.querySelector('svg').style.transform = 'translateX(5px)';
+            });
+            link.addEventListener('mouseleave', () => {
+                link.querySelector('svg').style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

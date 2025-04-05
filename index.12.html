@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Magical Savannah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900">
+  <!-- Navbar -->
+  <nav class="bg-white border-b border-gray-200 px-4 lg:px-6 py-3">
+    <div class="flex flex-wrap justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-green-800">The Magical Savannah</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="#emotion" class="hover:text-green-700">Vibes</a>
+        <a href="#group" class="hover:text-green-700">Tribes</a>
+        <a href="#memories" class="hover:text-green-700">Stories</a>
+        <a href="#newsletter" class="hover:text-green-700">Newsletter</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative bg-[url('https://source.unsplash.com/1600x900/?africa,safari')] bg-cover bg-center h-[90vh] flex items-center justify-center text-white">
+    <div class="text-center bg-black bg-opacity-50 p-10 rounded-xl">
+      <h1 class="text-5xl font-bold">Magical Memories Await</h1>
+      <p class="mt-4 text-xl">Customized adventures across Kenya & Tanzania</p>
+      <div class="mt-6 space-x-4">
+        <a href="#" class="px-6 py-3 bg-green-600 rounded hover:bg-green-700 transition">Start Your Journey</a>
+        <a href="#" class="px-6 py-3 bg-white text-black rounded hover:bg-gray-200 transition">Surprise Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emotion-Based Recommender -->
+  <section id="emotion" class="py-16 px-6 text-center bg-green-50">
+    <h2 class="text-3xl font-bold mb-6">How Do You Want to Feel?</h2>
+    <div class="flex flex-wrap justify-center gap-4">
+      <button class="px-6 py-3 bg-green-700 text-white rounded-full hover:bg-green-800">🌄 Awe</button>
+      <button class="px-6 py-3 bg-green-700 text-white rounded-full hover:bg-green-800">🧘 Relaxed</button>
+      <button class="px-6 py-3 bg-green-700 text-white rounded-full hover:bg-green-800">👯 Connected</button>
+      <button class="px-6 py-3 bg-green-700 text-white rounded-full hover:bg-green-800">🎉 Adventurous</button>
+    </div>
+  </section>
+
+  <!-- Group Travel Section -->
+  <section id="group" class="py-16 px-6 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-6">Find Your Travel Tribe</h2>
+    <p class="mb-6 text-lg">Join group tours, chat before trips, or match with your perfect travel soulmate!</p>
+    <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Explore Group Tours</a>
+  </section>
+
+  <!-- Real Memories -->
+  <section id="memories" class="py-16 px-6 bg-pink-100 text-center">
+    <h2 class="text-3xl font-bold mb-6">Real Travelers. Real Memories.</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <img src="https://source.unsplash.com/300x200/?travel,africa" class="rounded-xl shadow-lg" />
+      <img src="https://source.unsplash.com/300x200/?zanzibar,safari" class="rounded-xl shadow-lg" />
+      <img src="https://source.unsplash.com/300x200/?adventure,tanzania" class="rounded-xl shadow-lg" />
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="py-16 px-6 bg-green-900 text-white text-center">
+    <h2 class="text-3xl font-bold mb-4">Join Our Tribe</h2>
+    <p class="mb-6">Be the first to know about new trips, giveaways, and magical offers!</p>
+    <form class="flex flex-col sm:flex-row justify-center gap-3 max-w-lg mx-auto">
+      <input type="email" placeholder="you@example.com" class="p-3 rounded text-black w-full sm:w-2/3" />
+      <button class="bg-white text-green-800 px-5 py-3 rounded hover:bg-gray-200">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white p-6 text-center">
+    <p class="text-sm">&copy; 2025 The Magical Savannah 🌍 | Built with love for East Africa</p>
+    <p class="text-sm">inquiries@themagicalsavannah.com</p>
+  </footer>
+</body>
+
+</html>

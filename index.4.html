@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations | Horizon Travel</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Flowbite CSS CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <style>
+        .destination-card:hover .destination-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold">Horizon Travel</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-500">Home</a>
+                        <a href="destinations.html" class="px-3 py-2 rounded-md text-sm font-medium bg-blue-700">Destinations</a>
+                        <a href="tours.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-500">Tours</a>
+                        <a href="about.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-500">About</a>
+                        <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-500">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-blue-500 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Hamburger icon -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative">
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Travel destinations" class="w-full h-96 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Explore Our Destinations</h1>
+                <p class="text-xl text-white mb-8 max-w-2xl mx-auto">Discover the world's most breathtaking places with our curated selection of destinations</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Destinations Filter -->
+    <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold mb-4 md:mb-0">All Destinations</h2>
+            <div class="flex space-x-2">
+                <button id="filter-all" class="px-4 py-2 bg-blue-600 text-white rounded-md">All</button>
+                <button id="filter-europe" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md">Europe</button>
+                <button id="filter-asia" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md">Asia</button>
+                <button id="filter-americas" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md">Americas</button>
+                <button id="filter-africa" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md">Africa</button>
+            </div>
+        </div>
+
+        <!-- Destinations Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Destination 1 - Europe -->
+            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="europe">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Paris, France" class="w-full h-64 object-cover destination-image transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold">Paris, France</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Europe</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">The City of Light, famous for its art, fashion, gastronomy and culture.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-gray-500 line-through mr-2">$1,899</span>
+                            <span class="text-lg font-bold text-blue-600">$1,599</span>
+                        </div>
+                        <a href="paris.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 2 - Asia -->
+            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="asia">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tokyo, Japan" class="w-full h-64 object-cover destination-image transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold">Tokyo, Japan</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Asia</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">A dynamic metropolis where cutting-edge technology meets traditional culture.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-gray-500 line-through mr-2">$2,299</span>
+                            <span class="text-lg font-bold text-blue-600">$1,999</span>
+                        </div>
+                        <a href="tokyo.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 3 - Americas -->
+            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="americas">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="New York, USA" class="w-full h-64 object-cover destination-image transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold">New York, USA</h3>
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Americas</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">The city that never sleeps, with iconic landmarks and endless energy.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-gray-500 line-through mr-2">$1,599</span>
+                            <span class="text-lg font-bold text-blue-600">$1,299</span>
+                        </div>
+                        <a href="new-york.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 4 - Africa -->
+            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="africa">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cape Town, South Africa" class="w-full h-64 object-cover destination-image transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold">Cape Town, South Africa</h3>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Africa</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Stunning coastal beauty, wildlife, and vibrant culture at the tip of Africa.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-gray-500 line-through mr-2">$2,199</span>
+                            <span class="text-lg font-bold text-blue-600">$1,899</span>
+                        </div>
+                        <a href="cape-town.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 5 - Europe -->
+            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="europe">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Santorini, Greece" class="w-full h-64 object-cover destination-image transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold">Santorini, Greece</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Europe</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Whitewashed buildings and breathtaking sunsets over the Aegean Sea.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-gray-500 line-through mr-2">$1,799</span>
+                            <span class="text-lg font-bold text-blue-600">$1,499</span>
+                        </div>
+                        <a href="santorini.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 6 - Asia -->
+            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="asia">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bali, Indonesia" class="w-full h-64 object-cover destination-image transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold">Bali, Indonesia</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Asia</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Tropical paradise with lush jungles, pristine beaches, and spiritual retreats.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-gray-500 line-through mr-2">$1,999</span>
+                            <span class="text-lg font-bold text-blue-600">$1,699</span>
+                        </div>
+                        <a href="bali.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 7 - Americas -->
+            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="americas">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rio de Janeiro, Brazil" class="w-full h-64 object-cover destination-image transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold">Rio de Janeiro, Brazil</h3>
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Americas</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Vibrant city with stunning beaches, lush mountains, and carnival spirit.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-gray-500 line-through mr-2">$1,899</span>
+                            <span class="text-lg font-bold text-blue-600">$1,599</span>
+                        </div>
+                        <a href="rio.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 8 - Europe -->
+            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="europe">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rome, Italy" class="w-full h-64 object-cover destination-image transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold">Rome, Italy</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Europe</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">The Eternal City with ancient ruins, Renaissance art, and delicious cuisine.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-gray-500 line-through mr-2">$1,699</span>
+                            <span class="text-lg font-bold text-blue-600">$1,399</span>
+                        </div>
+                        <a href="rome.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 9 - Asia -->
+            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="asia">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kyoto, Japan" class="w-full h-64 object-cover destination-image transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold">Kyoto, Japan</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Asia</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Ancient capital with serene temples, traditional tea houses, and cherry blossoms.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-gray-500 line-through mr-2">$2,099</span>
+                            <span class="text-lg font-bold text-blue-600">$1,799</span>
+                        </div>
+                        <a href="kyoto.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="mt-12 flex justify-center">
+            <nav class="inline-flex rounded-md shadow">
+                <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">Previous</a>
+                <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-blue-600 font-medium">1</a>
+                <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">2</a>
+                <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">3</a>
+                <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">Next</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready for Your Next Adventure?</h2>
+            <p class="text-xl mb-8">Sign up for exclusive deals and travel inspiration</p>
+            <form class="max-w-md mx-auto">
+                <div class="flex">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-800">
+                    <button type="submit" class="bg-blue-800 hover:bg-blue-900 px-6 py-3 rounded-r-lg font-medium transition duration-300">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Horizon Travel</h3>
+                    <p class="text-gray-400">Making dream vacations a reality since 2008.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="destinations.html" class="text-gray-400 hover:text-white">Destinations</a></li>
+                        <li><a href="tours.html" class="text-gray-400 hover:text-white">Special Offers</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <address class="text-gray-400 not-italic">
+                        <p>123 Travel Street</p>
+                        <p>San Francisco, CA 94107</p>
+                        <p class="mt-2">Phone: (555) 123-4567</p>
+                        <p>Email: info@horizontravel.com</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Horizon Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Flowbite JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    
+    <!-- Filtering Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('[id^="filter-"]');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button styling
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-blue-600', 'text-white');
+                        btn.classList.add('bg-gray-200', 'hover:bg-gray-300');
+                    });
+                    this.classList.remove('bg-gray-200', 'hover:bg-gray-300');
+                    this.classList.add('bg-blue-600', 'text-white');
+                    
+                    // Filter destinations
+                    const region = this.id.split('-')[1];
+                    const destinations = document.querySelectorAll('.destination-card');
+                    
+                    destinations.forEach(destination => {
+                        if (region === 'all' || destination.dataset.region === region) {
+                            destination.style.display = 'block';
+                        } else {
+                            destination.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

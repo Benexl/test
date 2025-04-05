@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Magical Savannah - Experience East Africa</title>
+    <!-- Flowbite CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <!-- Tailwind CSS (Required by Flowbite) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles if needed */
+        body {
+            font-family: 'Inter', sans-serif; /* Example font */
+        }
+        .accent-color {
+            color: #F97316; /* Orange */
+        }
+        .bg-accent-color {
+            background-color: #F97316; /* Orange */
+        }
+        .border-accent-color {
+            border-color: #F97316; /* Orange */
+        }
+        /* Ensure images cover their containers */
+        img {
+            object-fit: cover;
+        }
+    </style>
+    <!-- Include a font if desired, e.g., Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 lg:px-6 py-3">
+            <div class="flex flex-wrap justify-between items-center">
+                <a href="#" class="flex items-center">
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900">
+                        <span class="accent-color">Magical</span>Savannah
+                    </span>
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <a href="#" class="text-gray-800 hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Sign up</a>
+                    <a href="#" class="text-white bg-accent-color hover:bg-orange-600 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Login</a>
+                    <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+                <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li><a href="#" class="block py-2 pr-4 pl-3 text-white bg-accent-color rounded lg:bg-transparent lg:text-accent-color lg:p-0" aria-current="page">Home</a></li>
+                        <li><a href="#about" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-accent-color lg:p-0">About</a></li>
+                        <li><a href="#destinations" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-accent-color lg:p-0">Destinations</a></li>
+                        <li><a href="#tours" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-accent-color lg:p-0">Tours</a></li>
+                        <li><a href="#blog" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-accent-color lg:p-0">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-white pt-12 pb-16 md:pt-20 md:pb-24">
+        <div class="container mx-auto px-4 lg:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Text Content -->
+            <div>
+                <span class="text-sm font-semibold text-accent-color uppercase tracking-wider">Experience East Africa</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mt-2 mb-4 leading-tight">
+                    Discover Unforgettable Experiences In The World
+                </h1>
+                <p class="text-gray-600 text-lg mb-8">
+                    Let's find your dream adventure in Kenya & Tanzania. We focus on emotion-driven journeys, community connection, and creating lifelong memories.
+                </p>
+                <div class="bg-white shadow-md rounded-lg p-4 flex flex-col md:flex-row items-center gap-4">
+                    <div class="flex-1 w-full">
+                        <label for="location" class="text-sm font-medium text-gray-700 block mb-1">Location</label>
+                        <input type="text" id="location" class="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-orange-500 focus:border-orange-500" placeholder="Where are you going? (e.g., Maasai Mara)">
+                    </div>
+                     <div class="flex-1 w-full">
+                        <label for="date" class="text-sm font-medium text-gray-700 block mb-1">Select Date</label>
+                        <input type="date" id="date" class="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-orange-500 focus:border-orange-500">
+                    </div>
+                    <button class="w-full md:w-auto bg-accent-color hover:bg-orange-600 text-white font-semibold py-2.5 px-6 rounded-lg text-sm transition duration-200">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Image Collage -->
+             <!-- NOTE: Using source.unsplash.com will load random relevant images -->
+            <div class="grid grid-cols-2 grid-rows-2 gap-4 relative h-[450px]">
+                <img src="https://source.unsplash.com/300x200/?hot-air-balloon,safari,kenya,tanzania" alt="Hot Air Balloon Safari" class="rounded-lg shadow-md w-full h-full col-span-1 row-span-1">
+                <img src="https://source.unsplash.com/300x400/?zanzibar,beach,ocean,tanzania" alt="Zanzibar Beach" class="rounded-lg shadow-md w-full h-full col-span-1 row-span-2">
+                <img src="https://source.unsplash.com/300x200/?serengeti,wildlife,elephant,lion" alt="Serengeti Wildlife" class="rounded-lg shadow-md w-full h-full col-span-1 row-span-1">
+
+                <!-- Floating Info Boxes (Example) -->
+                 <div class="absolute top-4 left-4 bg-white bg-opacity-80 backdrop-blur-sm rounded-lg px-3 py-1 shadow text-xs font-semibold text-gray-800">
+                    Curated Experiences
+                </div>
+                 <div class="absolute top-4 right-20 bg-white bg-opacity-80 backdrop-blur-sm rounded-lg px-3 py-1 shadow text-xs font-semibold text-green-600 flex items-center">
+                    <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Community Approved
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- About / Recommendation Section -->
+    <section id="about" class="py-16 lg:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Image Collage -->
+            <div class="grid grid-cols-2 gap-4 h-[450px]">
+                 <img src="https://source.unsplash.com/400x300/?maasai,people,culture,kenya" alt="Maasai Culture" class="rounded-lg shadow-md w-full h-full col-span-2">
+                 <img src="https://source.unsplash.com/200x200/?diani,beach,kenya,watersport" alt="Diani Watersports" class="rounded-lg shadow-md w-full h-full">
+                 <img src="https://source.unsplash.com/200x200/?kilimanjaro,mountain,tanzania" alt="Mount Kilimanjaro View" class="rounded-lg shadow-md w-full h-full">
+            </div>
+
+            <!-- Right Text Content -->
+            <div>
+                <span class="text-sm font-semibold text-accent-color uppercase tracking-wider">Our Philosophy</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                    Experience Travel Driven by Emotion & Connection
+                </h2>
+                <p class="text-gray-600 text-lg mb-8">
+                    We believe travel is about more than just destinations. It's about the feelings, the stories, and the connections you make. The Magical Savannah curates unique experiences in Kenya and Tanzania designed to evoke specific emotions and foster community among travellers.
+                </p>
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <p class="text-2xl font-bold text-accent-color">2000+</p>
+                        <p class="text-sm text-gray-500">Community Members</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <p class="text-2xl font-bold text-accent-color">100+</p>
+                        <p class="text-sm text-gray-500">Unique Experiences</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <p class="text-2xl font-bold text-accent-color">Expert</p>
+                        <p class="text-sm text-gray-500">Local Guides</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4 lg:px-6 text-center">
+            <span class="text-sm font-semibold text-accent-color uppercase tracking-wider">What Makes Us Different</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                Features Designed For Connection & Adventure
+            </h2>
+            <p class="text-gray-600 text-lg mb-12 max-w-3xl mx-auto">
+                We go beyond standard bookings to offer tools and experiences that foster genuine connection and unforgettable adventures.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1: Community -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-orange-100 mx-auto">
+                        <svg class="w-6 h-6 text-accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Vibrant Community</h3>
+                    <p class="text-gray-600 text-sm">Connect with fellow travelers, join group tours by vibe, or opt for mystery trips!</p>
+                </div>
+                 <!-- Feature 2: Emotion Recommender -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                     <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-orange-100 mx-auto">
+                        <svg class="w-6 h-6 text-accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Emotion-Based Discovery</h3>
+                    <p class="text-gray-600 text-sm">Choose how you want to feel (peaceful, excited, romantic) and get tailored suggestions.</p>
+                </div>
+                 <!-- Feature 3: TravelMatch -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                     <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-orange-100 mx-auto">
+                        <svg class="w-6 h-6 text-accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg> <!-- Simple lightning/match icon -->
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">TravelMatch™</h3>
+                    <p class="text-gray-600 text-sm">Find travel partners based on trip type, vibe, or mood using our unique matching system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Top Destination Section -->
+    <section id="destinations" class="py-16 lg:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="text-center mb-12">
+                <span class="text-sm font-semibold text-accent-color uppercase tracking-wider">Featured Experiences</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                    Explore Our Curated Trips in East Africa
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                   Handpicked adventures in Kenya and Tanzania designed for unforgettable memories.
+                </p>
+            </div>
+
+             <!-- Simple Search/Filter bar - similar style to original -->
+            <div class="bg-white shadow-md rounded-lg p-4 mb-12 flex flex-col md:flex-row items-center gap-4">
+                <div class="flex-1 w-full">
+                    <label for="dest-location" class="text-sm font-medium text-gray-700 block mb-1">Location</label>
+                    <input type="text" id="dest-location" class="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-orange-500 focus:border-orange-500" placeholder="e.g., Serengeti, Zanzibar">
+                </div>
+                <div class="flex-1 w-full md:max-w-[120px]">
+                     <label for="person" class="text-sm font-medium text-gray-700 block mb-1">Person</label>
+                    <input type="number" id="person" min="1" value="1" class="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-orange-500 focus:border-orange-500">
+                </div>
+                <div class="flex-1 w-full">
+                     <label for="checkin" class="text-sm font-medium text-gray-700 block mb-1">Check In</label>
+                    <input type="date" id="checkin" class="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-orange-500 focus:border-orange-500">
+                </div>
+                <div class="flex-1 w-full">
+                     <label for="checkout" class="text-sm font-medium text-gray-700 block mb-1">Check Out</label>
+                    <input type="date" id="checkout" class="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-orange-500 focus:border-orange-500">
+                </div>
+                <button class="w-full md:w-auto bg-accent-color hover:bg-orange-600 text-white font-semibold py-2.5 px-6 rounded-lg text-sm transition duration-200 mt-4 md:mt-0 md:self-end">
+                    Search Trips
+                </button>
+            </div>
+
+            <!-- Destination Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Maasai Mara -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://source.unsplash.com/400x250/?maasai-mara,safari,kenya,wildlife" alt="Maasai Mara Safari" class="w-full h-48">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Maasai Mara Safari</h3>
+                        <p class="text-sm text-gray-500 mb-3">Kenya - Witness the Great Migration</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-accent-color">$1200</span>
+                            <a href="#" class="text-sm text-white bg-accent-color hover:bg-orange-600 rounded-full px-4 py-1 transition duration-200">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2: Zanzibar Beach -->
+                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://source.unsplash.com/400x250/?zanzibar,beach,tanzania,palm-tree" alt="Zanzibar Beach Escape" class="w-full h-48">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Zanzibar Beach Escape</h3>
+                        <p class="text-sm text-gray-500 mb-3">Tanzania - Spice Island Relaxation</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-accent-color">$950</span>
+                             <a href="#" class="text-sm text-white bg-accent-color hover:bg-orange-600 rounded-full px-4 py-1 transition duration-200">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3: Kilimanjaro Trek -->
+                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://source.unsplash.com/400x250/?kilimanjaro,trekking,tanzania,mountain" alt="Kilimanjaro Trek" class="w-full h-48">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Kilimanjaro Base Camp</h3>
+                        <p class="text-sm text-gray-500 mb-3">Tanzania - Gateway to the Summit</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-accent-color">$2500</span>
+                             <a href="#" class="text-sm text-white bg-accent-color hover:bg-orange-600 rounded-full px-4 py-1 transition duration-200">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Add more cards as needed -->
+                 <!-- Card 4: Amboseli Elephants -->
+                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://source.unsplash.com/400x250/?amboseli,elephant,kenya,kilimanjaro" alt="Amboseli Elephant View" class="w-full h-48">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Amboseli Elephant Views</h3>
+                        <p class="text-sm text-gray-500 mb-3">Kenya - Giants Before Kilimanjaro</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-accent-color">$800</span>
+                             <a href="#" class="text-sm text-white bg-accent-color hover:bg-orange-600 rounded-full px-4 py-1 transition duration-200">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Card 5: Ngorongoro Crater -->
+                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://source.unsplash.com/400x250/?ngorongoro,crater,tanzania,wildlife" alt="Ngorongoro Crater Safari" class="w-full h-48">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Ngorongoro Crater</h3>
+                        <p class="text-sm text-gray-500 mb-3">Tanzania - Caldera Wildlife Haven</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-accent-color">$1100</span>
+                             <a href="#" class="text-sm text-white bg-accent-color hover:bg-orange-600 rounded-full px-4 py-1 transition duration-200">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Card 6: Nairobi Urban Culture -->
+                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://source.unsplash.com/400x250/?nairobi,city,kenya,market" alt="Nairobi Urban Exploration" class="w-full h-48">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Nairobi Urban Vibe</h3>
+                        <p class="text-sm text-gray-500 mb-3">Kenya - City Culture & Nightlife</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-accent-color">$500</span>
+                             <a href="#" class="text-sm text-white bg-accent-color hover:bg-orange-600 rounded-full px-4 py-1 transition duration-200">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Basic Footer -->
+    <footer class="bg-white py-8 border-t border-gray-200">
+        <div class="container mx-auto px-4 lg:px-6 text-center text-gray-600">
+             <p class="text-sm">© 2024 The Magical Savannah. All rights reserved.</p>
+             <p class="text-sm mt-2">Inquiries: <a href="mailto:inquiries@themagicalsavannah.com" class="text-accent-color hover:underline">inquiries@themagicalsavannah.com</a></p>
+             <!-- Add Social Media Icons Here -->
+             <div class="flex justify-center space-x-4 mt-4">
+                 <a href="#" class="text-gray-500 hover:text-accent-color">
+                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                 </a>
+                 <a href="#" class="text-gray-500 hover:text-accent-color">
+                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                 </a>
+                  <a href="#" class="text-gray-500 hover:text-accent-color">
+                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.023.047 1.351.058 3.807.058h.468c2.456 0 2.784-.011 3.807-.058.975-.045 1.504-.207 1.857-.344.467-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.047-1.023.058-1.351.058-3.807v-.468c0-2.456-.011-2.784-.058-3.807-.045-.975-.207-1.504-.344-1.857-.182-.467-.399-.8-.748-1.15-.35-.35-.683-.566-1.15-.748-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z" clip-rule="evenodd" /></svg>
+                 </a>
+             </div>
+        </div>
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+</html>
