@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Magical Savannah - Kenya's Premier Travel Experience</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hunter-green': '#2C5F2D',
+                        'black': '#090909',
+                        'moonstone': '#69A2B0',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-black">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Mobile menu button and logo -->
+                <div class="flex items-center">
+                    <button id="mobile-menu-button" class="md:hidden text-hunter-green focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    <a href="#" class="ml-4 md:ml-0 flex-shrink-0 flex items-center">
+                        <span class="text-xl font-bold text-hunter-green">The Magical Savannah</span>
+                    </a>
+                </div>
+
+                <!-- Desktop right side navigation -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="text-hunter-green hover:text-moonstone">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <a href="#" class="text-hunter-green hover:text-moonstone">Sign Up</a>
+                    <a href="#" class="bg-hunter-green text-white px-4 py-2 rounded-md hover:bg-moonstone transition">Book Today</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="pt-2 pb-3 space-y-1">
+                <!-- Explore Dropdown -->
+                <div x-data="{ open: false }" class="relative">
+                    <button @click="open = !open" class="w-full text-left px-4 py-2 text-hunter-green hover:bg-gray-50 flex justify-between items-center">
+                        <span>Explore</span>
+                        <svg :class="{'transform rotate-180': open}" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" class="pl-4">
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Emotion-Based Trips</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Group Adventures</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Surprise Me ✨</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Wishlist 💖</a>
+                    </div>
+                </div>
+
+                <!-- Experiences Dropdown -->
+                <div x-data="{ open: false }" class="relative">
+                    <button @click="open = !open" class="w-full text-left px-4 py-2 text-hunter-green hover:bg-gray-50 flex justify-between items-center">
+                        <span>Experiences</span>
+                        <svg :class="{'transform rotate-180': open}" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" class="pl-4">
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">TravelMatch™ ❤️</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Stories</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Story of the Month 🏆</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Tailored Trios</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Stargazing</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Hidden Gem Hunts</a>
+                    </div>
+                </div>
+
+                <!-- Travel Themes Dropdown -->
+                <div x-data="{ open: false }" class="relative">
+                    <button @click="open = !open" class="w-full text-left px-4 py-2 text-hunter-green hover:bg-gray-50 flex justify-between items-center">
+                        <span>Travel Themes</span>
+                        <svg :class="{'transform rotate-180': open}" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" class="pl-4">
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Wellness & Retreats</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Romance & Honeymoons 💞</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Thrill & Adventure</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Nature & Wildlife</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Urban Vibes 🏙️</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Food & Culture 🍲</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Soul & Spiritual</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Healing Escapes</a>
+                    </div>
+                </div>
+
+                <!-- Destinations Dropdown -->
+                <div x-data="{ open: false }" class="relative">
+                    <button @click="open = !open" class="w-full text-left px-4 py-2 text-hunter-green hover:bg-gray-50 flex justify-between items-center">
+                        <span>Destinations</span>
+                        <svg :class="{'transform rotate-180': open}" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" class="pl-4">
+                        <div class="relative">
+                            <button @click="openSub = !openSub" class="w-full text-left px-4 py-2 text-sm text-hunter-green hover:bg-gray-50 flex justify-between items-center">
+                                <span>Kenya</span>
+                                <svg :class="{'transform rotate-180': openSub}" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div x-show="openSub" class="pl-4">
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Nairobi</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Maasai Mara</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Diani Beach</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Lake Naivasha</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Mount Kenya</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Amboseli</a>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <button @click="openSub = !openSub" class="w-full text-left px-4 py-2 text-sm text-hunter-green hover:bg-gray-50 flex justify-between items-center">
+                                <span>Tanzania</span>
+                                <svg :class="{'transform rotate-180': openSub}" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div x-show="openSub" class="pl-4">
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Serengeti</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Zanzibar</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Mount Kilimanjaro</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Ngorongoro Crater</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Arusha</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-hunter-green hover:bg-gray-50">Lake Manyara</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Us Dropdown -->
+                <div x-data="{ open: false }" class="relative">
+                    <button @click="open = !open" class="w-full text-left px-4 py-2 text-hunter-green hover:bg-gray-50 flex justify-between items-center">
+                        <span>About Us</span>
+                        <svg :class="{'transform rotate-180': open}" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" class="pl-4">
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Why Magical Savannah</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">The Team</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Private Tours</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Trip Coordinators</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Referral Program</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-hunter-green hover:bg-gray-50">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Mobile right side navigation -->
+                <div class="px-4 py-3 border-t border-gray-200">
+                    <button class="w-full text-left text-hunter-green mb-2">
+                        <i class="fas fa-search mr-2"></i> Search
+                    </button>
+                    <a href="#" class="block w-full text-left text-hunter-green mb-2">Sign Up</a>
+                    <a href="#" class="block w-full text-center bg-hunter-green text-white px-4 py-2 rounded-md hover:bg-moonstone transition">Book Today</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-image bg-gray-900 text-white pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Not just places—memories for a lifetime.</h1>
+            <p class="text-xl md:text-2xl mb-8">Discover the magic of East Africa with curated experiences tailored to your emotions</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-hunter-green hover:bg-moonstone text-white font-bold py-3 px-6 rounded-md transition duration-300">Start your Journey Today</a>
+                <a href="#" class="bg-white hover:bg-gray-100 text-hunter-green font-bold py-3 px-6 rounded-md transition duration-300">Surprise Me ✨</a>
+            </div>
+            <div class="mt-8 max-w-md mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="How do you want to feel?" class="w-full py-3 px-4 pr-12 rounded-md focus:outline-none focus:ring-2 focus:ring-moonstone">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-hunter-green">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Emotion-Based Discovery -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">How do you want this trip to make you feel?</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <span class="text-2xl mb-2 block">😌</span>
+                    <h3 class="font-semibold">Peaceful</h3>
+                </a>
+                <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <span class="text-2xl mb-2 block">🏃</span>
+                    <h3 class="font-semibold">Adventurous</h3>
+                </a>
+                <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <span class="text-2xl mb-2 block">💞</span>
+                    <h3 class="font-semibold">Romantic</h3>
+                </a>
+                <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <span class="text-2xl mb-2 block">🌿</span>
+                    <h3 class="font-semibold">Rejuvenated</h3>
+                </a>
+                <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <span class="text-2xl mb-2 block">🤩</span>
+                    <h3 class="font-semibold">Spontaneous</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Experiences -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Experiences</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tailored Trios" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Tailored Trios</h3>
+                        <p class="text-gray-600 mb-4">Three perfectly curated stops for your ideal journey</p>
+                        <a href="#" class="text-moonstone hover:text-hunter-green font-semibold">Explore →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Stargazing Nights" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Stargazing Nights 🌌</h3>
+                        <p class="text-gray-600 mb-4">Under the vast African sky, find your place in the universe</p>
+                        <a href="#" class="text-moonstone hover:text-hunter-green font-semibold">Explore →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hidden Gem Hunts" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hidden Gem Hunts 🔍</h3>
+                        <p class="text-gray-600 mb-4">Discover places only locals know about</p>
+                        <a href="#" class="text-moonstone hover:text-hunter-green font-semibold">Explore →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Destinations -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Top Destinations</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="relative rounded-lg overflow-hidden h-64 group">
+                    <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Maasai Mara" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold">Maasai Mara</h3>
+                        <p class="text-gray-200">Where the wild runs free</p>
+                        <span class="inline-block mt-2 px-3 py-1 bg-moonstone text-white text-xs rounded-full">Adventure</span>
+                    </div>
+                </div>
+                <div class="relative rounded-lg overflow-hidden h-64 group">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Zanzibar" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold">Zanzibar</h3>
+                        <p class="text-gray-200">Spice islands and turquoise waters</p>
+                        <span class="inline-block mt-2 px-3 py-1 bg-moonstone text-white text-xs rounded-full">Relaxation</span>
+                    </div>
+                </div>
+                <div class="relative rounded-lg overflow-hidden h-64 group">
+                    <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mount Kilimanjaro" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold">Mount Kilimanjaro</h3>
+                        <p class="text-gray-200">Africa's rooftop awaits</p>
+                        <span class="inline-block mt-2 px-3 py-1 bg-moonstone text-white text-xs rounded-full">Challenge</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Stories that Moved Us</h2>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Story of the Month" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-hunter-green text-white text-sm font-bold px-3 py-1 rounded-full mr-2">Story of the Month 🏆</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Finding Myself in the Serengeti</h3>
+                        <p class="text-gray-600 mb-6">"The vastness of the Serengeti put everything into perspective. I came looking for wildlife but found myself instead." - Sarah K.</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#" class="bg-hunter-green hover:bg-moonstone text-white font-bold py-2 px-4 rounded-md transition duration-300 text-center">Read More Stories</a>
+                            <a href="#" class="border border-hunter-green text-hunter-green hover:bg-gray-50 font-bold py-2 px-4 rounded-md transition duration-300 text-center">Share Your Story</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="py-16 bg-moonstone text-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Get the magic in your inbox</h2>
+            <p class="text-xl mb-8">New trips, last-minute surprises, stories that make you want to pack.</p>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <input type="email" placeholder="Your email address" class="flex-grow py-3 px-4 rounded-md focus:outline-none text-black">
+                <button class="bg-hunter-green hover:bg-black text-white font-bold py-3 px-6 rounded-md transition duration-300">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white">
+        <!-- Top Tier - CTA -->
+        <div class="bg-cover bg-center py-12" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h3 class="text-2xl font-bold mb-6">Ready to make memories that last a lifetime? 🌍✨</h3>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="bg-hunter-green hover:bg-moonstone text-white font-bold py-3 px-6 rounded-md transition duration-300">Book Your Adventure</a>
+                    <a href="#" class="bg-white hover:bg-gray-200 text-black font-bold py-3 px-6 rounded-md transition duration-300">Suprise Me</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Tier - Main Footer -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <!-- Column 1 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-moonstone">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-moonstone transition">Emotion-Based Trips</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Surprise Me</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Group Adventures</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">TravelMatch™</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Tailored Trios</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-moonstone">Destinations</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <h5 class="font-semibold mb-2">Kenya</h5>
+                            <ul class="space-y-2">
+                                <li><a href="#" class="hover:text-moonstone transition text-sm">Maasai Mara</a></li>
+                                <li><a href="#" class="hover:text-moonstone transition text-sm">Diani Beach</a></li>
+                                <li><a href="#" class="hover:text-moonstone transition text-sm">Nairobi</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold mb-2">Tanzania</h5>
+                            <ul class="space-y-2">
+                                <li><a href="#" class="hover:text-moonstone transition text-sm">Serengeti</a></li>
+                                <li><a href="#" class="hover:text-moonstone transition text-sm">Zanzibar</a></li>
+                                <li><a href="#" class="hover:text-moonstone transition text-sm">Kilimanjaro</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-moonstone">Experiences</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-moonstone transition">Stargazing Nights</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Hidden Gem Hunts</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Story of the Month</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Healing Escapes</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Romance & Honeymoons</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-moonstone">About</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-moonstone transition">Why Magical Savannah</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Meet the Team</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Private Tours</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Trip Coordinators</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Referral Program</a></li>
+                        <li><a href="#" class="hover:text-moonstone transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 5 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-moonstone">Stay Connected</h4>
+                    <div class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" class="flex-grow py-2 px-3 rounded-l-md text-black">
+                            <button class="bg-hunter-green hover:bg-moonstone text-white px-3 rounded-r-md">→</button>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-xl hover:text-moonstone transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-xl hover:text-moonstone transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-xl hover:text-moonstone transition"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-xl hover:text-moonstone transition"><i class="fab fa-facebook"></i></a>
+                    </div>
+                    <p class="text-sm">inquiries@themagicalsavannah.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Tier - Legal -->
+        <div class="border-t border-gray-800 py-6">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
+                <p>© 2025 The Magical Savannah. All rights reserved.</p>
+                <div class="mt-2">
+                    <a href="#" class="hover:text-moonstone transition mx-2">Privacy Policy</a>
+                    <a href="#" class="hover:text-moonstone transition mx-2">Terms of Use</a>
+                    <a href="#" class="hover:text-moonstone transition mx-2">Site Map</a>
+                    <a href="#" class="hover:text-moonstone transition mx-2">Made by @benexl</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
