@@ -1,95 +1,591 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Magical Savannah</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Magical Savannah - Not just places—memories for a lifetime.</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Add custom font if desired */
+        /* Optional: Define custom colors in Tailwind config if needed,
+           otherwise use arbitrary values like bg-[#2C5F2D] */
+        .bg-hunter-green { background-color: #2C5F2D; }
+        .text-hunter-green { color: #2C5F2D; }
+        .border-hunter-green { border-color: #2C5F2D; }
+        .hover\:bg-hunter-green-dark:hover { background-color: #1E421F; } /* Example darker shade */
 
-    h1,
-    h2,
-    h3 {
-      font-family: 'Playfair Display', serif;
-    }
-  </style>
+        .bg-moonstone { background-color: #69A2B0; }
+        .text-moonstone { color: #69A2B0; }
+        .border-moonstone { border-color: #69A2B0; }
+        .hover\:bg-moonstone-dark:hover { background-color: #54818C; } /* Example darker shade */
+
+        .bg-base-black { background-color: #090909; }
+        .text-base-black { color: #090909; }
+
+        /* Ensure dropdowns have white background for readability */
+        .flowbite-dropdown { background-color: white; color: #090909; }
+    </style>
 </head>
+<body class="bg-white text-base-black font-sans antialiased">
 
-<body class="bg-white text-gray-900">
-  <!-- Navbar -->
-  <nav class="bg-white border-b border-gray-200 px-4 lg:px-6 py-3">
-    <div class="flex flex-wrap justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-green-800">The Magical Savannah</a>
-      <div class="hidden md:flex space-x-6">
-        <a href="#emotion" class="hover:text-green-700">Vibes</a>
-        <a href="#group" class="hover:text-green-700">Tribes</a>
-        <a href="#memories" class="hover:text-green-700">Stories</a>
-        <a href="#newsletter" class="hover:text-green-700">Newsletter</a>
-      </div>
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50">
+        <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 shadow-md">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                <!-- Logo -->
+                <a href="#" class="flex items-center">
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-hunter-green">The Magical Savannah</span>
+                    <!-- Optional: Add an SVG logo here -->
+                </a>
+
+                <!-- Right Side Icons (Mobile First: Hamburger + Right Aligned Icons) -->
+                <div class="flex items-center lg:order-2 space-x-2">
+                     <!-- Search Icon -->
+                    <button data-modal-target="search-modal" data-modal-toggle="search-modal" type="button" class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                    <!-- Sign Up -->
+                    <a href="#" class="text-gray-800 hover:text-hunter-green focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Sign Up</a>
+                    <!-- Book Today CTA -->
+                    <a href="#" class="text-white bg-moonstone hover:bg-moonstone-dark focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Book Today</a>
+                    <!-- Hamburger Menu Button -->
+                    <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Main Navigation Links (Hidden on Mobile, Visible on lg) -->
+                <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <!-- Explore Dropdown -->
+                        <li>
+                            <button id="exploreDropdownLink" data-dropdown-toggle="exploreDropdown" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-hunter-green lg:p-0 lg:w-auto">Explore <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                            <!-- Dropdown menu -->
+                            <div id="exploreDropdown" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 flowbite-dropdown">
+                                <ul class="py-2 text-sm text-gray-700" aria-labelledby="exploreDropdownLink">
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Emotion-Based Trips</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Group Adventures</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Surprise Me ✨</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Wishlist 💖</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                         <!-- Experiences Dropdown -->
+                        <li>
+                            <button id="experiencesDropdownLink" data-dropdown-toggle="experiencesDropdown" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-hunter-green lg:p-0 lg:w-auto">Experiences <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                            <div id="experiencesDropdown" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 flowbite-dropdown">
+                                <ul class="py-2 text-sm text-gray-700" aria-labelledby="experiencesDropdownLink">
+                                     <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">TravelMatch™ ❤️</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Stories</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Story of the Month 🏆</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Tailored Trips</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Stargazing</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Hidden Gem Hunts</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- Travel Themes Dropdown -->
+                        <li>
+                             <button id="themesDropdownLink" data-dropdown-toggle="themesDropdown" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-hunter-green lg:p-0 lg:w-auto">Travel Themes <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                            <div id="themesDropdown" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 flowbite-dropdown">
+                                <ul class="py-2 text-sm text-gray-700" aria-labelledby="themesDropdownLink">
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Wellness & Retreats</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Romance & Honeymoons 💞</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Thrill & Adventure</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Nature & Wildlife</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Urban Vibes 🏙️</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Food & Culture 🍲</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Soul & Spiritual</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Healing Escapes</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- Destinations Dropdown -->
+                         <li>
+                            <button id="destinationsDropdownLink" data-dropdown-toggle="destinationsDropdown" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-hunter-green lg:p-0 lg:w-auto">Destinations <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                            <!-- Dropdown menu -->
+                            <div id="destinationsDropdown" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 flowbite-dropdown">
+                                <!-- Kenya Sub-Dropdown (Example - Needs JS for nested behavior or restructure) -->
+                                <ul class="py-2 text-sm text-gray-700" aria-labelledby="destinationsDropdownLink">
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 font-semibold">Kenya</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Nairobi</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Maasai Mara</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Diani Beach</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Lake Naivasha</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Mount Kenya</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Amboseli</a></li>
+                                    <li class="pt-2"><a href="#" class="block px-4 py-2 hover:bg-gray-100 font-semibold border-t border-gray-100">Tanzania</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Serengeti</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Zanzibar</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Mount Kilimanjaro</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Ngorongoro Crater</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Arusha</a></li>
+                                     <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 pl-8">Lake Manyara</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- About Us Dropdown -->
+                        <li>
+                            <button id="aboutDropdownLink" data-dropdown-toggle="aboutDropdown" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-hunter-green lg:p-0 lg:w-auto">About Us <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                            <div id="aboutDropdown" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 flowbite-dropdown">
+                                <ul class="py-2 text-sm text-gray-700" aria-labelledby="aboutDropdownLink">
+                                     <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Why Magical Savannah</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">The Team</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Private Tours</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Trip Coordinators</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Referral Program</a></li>
+                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Modal -->
+    <div id="search-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative p-4 bg-white rounded-lg shadow sm:p-5">
+                <!-- Modal header -->
+                <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5">
+                    <h3 class="text-lg font-semibold text-gray-900">Search Trips</h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="search-modal">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <form action="#">
+                    <div class="mb-4">
+                        <label for="search-field" class="block mb-2 text-sm font-medium text-gray-900">Search by keyword, destination, or feeling...</label>
+                        <input type="text" name="search-field" id="search-field" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-hunter-green focus:border-hunter-green block w-full p-2.5" placeholder="e.g., 'Maasai Mara', 'Romantic', 'Adventure'">
+                    </div>
+                    <button type="submit" class="text-white inline-flex items-center bg-hunter-green hover:bg-hunter-green-dark focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                        <svg class="mr-1 -ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        Search
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <!-- Hero -->
-  <section class="relative bg-[url('https://source.unsplash.com/1600x900/?africa,safari')] bg-cover bg-center h-[90vh] flex items-center justify-center text-white">
-    <div class="text-center bg-black bg-opacity-50 p-10 rounded-xl">
-      <h1 class="text-5xl font-bold">Magical Memories Await</h1>
-      <p class="mt-4 text-xl">Customized adventures across Kenya & Tanzania</p>
-      <div class="mt-6 space-x-4">
-        <a href="#" class="px-6 py-3 bg-green-600 rounded hover:bg-green-700 transition">Start Your Journey</a>
-        <a href="#" class="px-6 py-3 bg-white text-black rounded hover:bg-gray-200 transition">Surprise Me</a>
-      </div>
-    </div>
-  </section>
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="relative bg-hunter-green h-[80vh] min-h-[400px] flex items-center justify-center text-center text-white">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1534798270544-1Db407f17442?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Maasai Mara Golden Hour" class="w-full h-full object-cover">
+                 <!-- Overlay -->
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+            </div>
+             <!-- Content -->
+            <div class="relative z-10 p-4">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Not just places—<br>memories for a lifetime.</h1>
+                <p class="text-lg md:text-xl mb-8">Experience the magic of Kenya & Tanzania.</p>
+                <a href="#" class="inline-block bg-moonstone hover:bg-moonstone-dark text-base-black font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Start your Journey Today</a>
+                <!-- Optional Mini Search -->
+                <div class="mt-8 max-w-md mx-auto hidden md:block">
+                    <label for="hero-search" class="sr-only">How do you want to feel?</label>
+                    <input type="text" id="hero-search" placeholder="How do you want to feel? (e.g., Adventurous)" class="w-full px-4 py-3 rounded-lg bg-white/80 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-moonstone">
+                </div>
+            </div>
+        </section>
 
-  <!-- Emotion-Based Recommender -->
-  <section id="emotion" class="py-16 px-6 text-center bg-green-50">
-    <h2 class="text-3xl font-bold mb-6">How Do You Want to Feel?</h2>
-    <div class="flex flex-wrap justify-center gap-4">
-      <button class="px-6 py-3 bg-green-700 text-white rounded-full hover:bg-green-800">🌄 Awe</button>
-      <button class="px-6 py-3 bg-green-700 text-white rounded-full hover:bg-green-800">🧘 Relaxed</button>
-      <button class="px-6 py-3 bg-green-700 text-white rounded-full hover:bg-green-800">👯 Connected</button>
-      <button class="px-6 py-3 bg-green-700 text-white rounded-full hover:bg-green-800">🎉 Adventurous</button>
-    </div>
-  </section>
+        <!-- 2. Emotion-Based Discovery Module -->
+        <section class="py-16 px-4 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4 text-hunter-green">How do you want this trip to make you feel?</h2>
+                <p class="text-lg text-gray-600 mb-10">Select a mood to discover curated experiences.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <!-- Emotion Card Example -->
+                    <a href="#" class="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition duration-300 group border border-transparent hover:border-moonstone">
+                        <div class="text-4xl mb-2">😌</div>
+                        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-hunter-green">Peaceful</h3>
+                    </a>
+                     <a href="#" class="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition duration-300 group border border-transparent hover:border-moonstone">
+                        <div class="text-4xl mb-2">🏃</div>
+                        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-hunter-green">Adventurous</h3>
+                    </a>
+                     <a href="#" class="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition duration-300 group border border-transparent hover:border-moonstone">
+                        <div class="text-4xl mb-2">💞</div>
+                        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-hunter-green">Romantic</h3>
+                    </a>
+                    <a href="#" class="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition duration-300 group border border-transparent hover:border-moonstone">
+                        <div class="text-4xl mb-2">🌿</div>
+                        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-hunter-green">Rejuvenated</h3>
+                    </a>
+                    <a href="#" class="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition duration-300 group border border-transparent hover:border-moonstone">
+                        <div class="text-4xl mb-2">🤩</div>
+                        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-hunter-green">Spontaneous</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-  <!-- Group Travel Section -->
-  <section id="group" class="py-16 px-6 bg-white text-center">
-    <h2 class="text-3xl font-bold mb-6">Find Your Travel Tribe</h2>
-    <p class="mb-6 text-lg">Join group tours, chat before trips, or match with your perfect travel soulmate!</p>
-    <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Explore Group Tours</a>
-  </section>
+        <!-- 3. Featured Experiences -->
+        <section class="py-16 px-4">
+            <div class="max-w-screen-xl mx-auto">
+                <h2 class="text-3xl font-bold mb-10 text-center text-hunter-green">Featured Experiences</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Experience Card -->
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1604917621957-17557ff2581e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Tailored Trio" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-hunter-green">Tailored Trios</h3>
+                            <p class="text-gray-600 mb-4">Curated 3-stop journeys designed for depth and discovery.</p>
+                            <a href="#" class="text-moonstone hover:underline font-medium">Explore Trios →</a>
+                        </div>
+                    </div>
+                     <!-- Experience Card -->
+                     <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506703719100-a0f375adda75?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Stargazing" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-hunter-green">Stargazing Nights 🌌</h3>
+                            <p class="text-gray-600 mb-4">Unforgettable evenings under the vast African sky.</p>
+                            <a href="#" class="text-moonstone hover:underline font-medium">Look Up →</a>
+                        </div>
+                    </div>
+                     <!-- Experience Card -->
+                     <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587175296675-34e6c0b1813c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Hidden Gems" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-hunter-green">Hidden Gem Hunts 🔍</h3>
+                            <p class="text-gray-600 mb-4">Discover secret spots known only to locals.</p>
+                            <a href="#" class="text-moonstone hover:underline font-medium">Start Hunting →</a>
+                        </div>
+                    </div>
+                    <!-- More cards: Surprise Me, TravelMatch™ -->
+                     <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1529253376978-964149b6c5a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Surprise Me" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-hunter-green">"Surprise Me" Adventures ✨</h3>
+                            <p class="text-gray-600 mb-4">Let fate (and us) decide your next magical trip!</p>
+                            <a href="#" class="text-moonstone hover:underline font-medium">Feel Spontaneous →</a>
+                        </div>
+                    </div>
+                     <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519340241574-2cec6aef0c0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Travel Match" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-hunter-green">TravelMatch™ ❤️</h3>
+                            <p class="text-gray-600 mb-4">Find compatible companions for your next group adventure.</p>
+                            <a href="#" class="text-moonstone hover:underline font-medium">Find Your Match →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Real Memories -->
-  <section id="memories" class="py-16 px-6 bg-pink-100 text-center">
-    <h2 class="text-3xl font-bold mb-6">Real Travelers. Real Memories.</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <img src="https://source.unsplash.com/300x200/?travel,africa" class="rounded-xl shadow-lg" />
-      <img src="https://source.unsplash.com/300x200/?zanzibar,safari" class="rounded-xl shadow-lg" />
-      <img src="https://source.unsplash.com/300x200/?adventure,tanzania" class="rounded-xl shadow-lg" />
-    </div>
-  </section>
+        <!-- 4. Top Destinations (Flowbite Carousel) -->
+        <section class="py-16 px-4 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto">
+                 <h2 class="text-3xl font-bold mb-10 text-center text-hunter-green">Top Destinations</h2>
+                <div id="destination-carousel" class="relative w-full" data-carousel="slide">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-96 overflow-hidden rounded-lg md:h-[500px]">
+                         <!-- Item 1 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://images.unsplash.com/photo-1516426122078-c23e763199b
+                            _?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Maasai Mara">
+                            <div class="absolute inset-0 bg-black/40 flex items-end p-8">
+                                <div class="text-white">
+                                    <h3 class="text-3xl font-bold">Maasai Mara, Kenya</h3>
+                                    <p class="mt-2">Iconic savannah, incredible wildlife encounters.</p>
+                                    <span class="inline-block bg-moonstone/80 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded mt-2">Wildlife & Nature</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://images.unsplash.com/photo-1586446418174-c570a4a14488?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Serengeti">
+                             <div class="absolute inset-0 bg-black/40 flex items-end p-8">
+                                <div class="text-white">
+                                    <h3 class="text-3xl font-bold">Serengeti, Tanzania</h3>
+                                    <p class="mt-2">Endless plains, home to the Great Migration.</p>
+                                    <span class="inline-block bg-moonstone/80 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded mt-2">Wildlife & Adventure</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://images.unsplash.com/photo-1600125704900-14f9811b576a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Zanzibar">
+                             <div class="absolute inset-0 bg-black/40 flex items-end p-8">
+                                <div class="text-white">
+                                    <h3 class="text-3xl font-bold">Zanzibar, Tanzania</h3>
+                                    <p class="mt-2">Spice islands, pristine beaches, rich history.</p>
+                                    <span class="inline-block bg-moonstone/80 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded mt-2">Romance & Culture</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://images.unsplash.com/photo-1590278290789-403539391c33?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Mount Kenya">
+                             <div class="absolute inset-0 bg-black/40 flex items-end p-8">
+                                <div class="text-white">
+                                    <h3 class="text-3xl font-bold">Mount Kenya</h3>
+                                    <p class="mt-2">Majestic peaks, diverse ecosystems, trekking adventures.</p>
+                                    <span class="inline-block bg-moonstone/80 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded mt-2">Adventure & Nature</span>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Item 5 -->
+                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://images.unsplash.com/photo-1579444741091-34a084552979?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Ngorongoro Crater">
+                             <div class="absolute inset-0 bg-black/40 flex items-end p-8">
+                                <div class="text-white">
+                                    <h3 class="text-3xl font-bold">Ngorongoro Crater, Tanzania</h3>
+                                    <p class="mt-2">A unique caldera teeming with concentrated wildlife.</p>
+                                     <span class="inline-block bg-moonstone/80 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded mt-2">Wildlife & Unique Landscapes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slider indicators -->
+                    <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                            </svg>
+                            <span class="sr-only">Previous</span>
+                        </span>
+                    </button>
+                    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                             <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                            </svg>
+                            <span class="sr-only">Next</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
 
-  <!-- Newsletter -->
-  <section id="newsletter" class="py-16 px-6 bg-green-900 text-white text-center">
-    <h2 class="text-3xl font-bold mb-4">Join Our Tribe</h2>
-    <p class="mb-6">Be the first to know about new trips, giveaways, and magical offers!</p>
-    <form class="flex flex-col sm:flex-row justify-center gap-3 max-w-lg mx-auto">
-      <input type="email" placeholder="you@example.com" class="p-3 rounded text-black w-full sm:w-2/3" />
-      <button class="bg-white text-green-800 px-5 py-3 rounded hover:bg-gray-200">Subscribe</button>
-    </form>
-  </section>
+        <!-- 5. Stories that Moved Us -->
+        <section class="py-16 px-4">
+             <div class="max-w-screen-xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4 text-center text-hunter-green">Stories that Moved Us</h2>
+                <p class="text-lg text-gray-600 mb-10 text-center">Real adventures from our community.</p>
 
-  <!-- Footer -->
-  <footer class="bg-black text-white p-6 text-center">
-    <p class="text-sm">&copy; 2025 The Magical Savannah 🌍 | Built with love for East Africa</p>
-    <p class="text-sm">inquiries@themagicalsavannah.com</p>
-  </footer>
+                <!-- Story of the Month Spotlight -->
+                 <div class="mb-12 p-8 bg-hunter-green/10 rounded-lg border border-hunter-green/30">
+                    <h3 class="text-2xl font-semibold mb-3 text-hunter-green flex items-center">🏆 Story of the Month</h3>
+                    <div class="md:flex md:items-center md:space-x-6">
+                        <img src="https://images.unsplash.com/photo-1529946179074-87642f6204d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Storyteller" class="w-full md:w-1/3 h-48 object-cover rounded-lg mb-4 md:mb-0">
+                        <div class="md:w-2/3">
+                            <blockquote class="text-lg italic text-gray-700 mb-3">"Finding hidden waterfalls near Naivasha was pure magic. The Magical Savannah team made it feel effortless and authentic."</blockquote>
+                            <p class="font-semibold text-gray-800">- Aisha K., Nairobi</p>
+                            <a href="#" class="text-moonstone hover:underline font-medium mt-2 inline-block">Read Aisha's Full Story →</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Other Stories Grid -->
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                     <!-- Story Snippet -->
+                     <div class="bg-white p-6 rounded-lg shadow">
+                         <p class="text-gray-600 mb-3 italic">"The group adventure to Amboseli connected me with amazing people. Seeing Kilimanjaro's peak was breathtaking!"</p>
+                         <p class="font-semibold text-gray-800">- David M.</p>
+                         <a href="#" class="text-moonstone hover:underline text-sm font-medium mt-1 inline-block">Read More →</a>
+                     </div>
+                     <!-- Story Snippet -->
+                    <div class="bg-white p-6 rounded-lg shadow">
+                         <p class="text-gray-600 mb-3 italic">"Our honeymoon in Zanzibar, arranged by TMS, was beyond perfect. Romantic, relaxing, and full of culture."</p>
+                         <p class="font-semibold text-gray-800">- The Chengs</p>
+                         <a href="#" class="text-moonstone hover:underline text-sm font-medium mt-1 inline-block">Read More →</a>
+                     </div>
+                 </div>
+
+                 <!-- CTA to Share Story -->
+                 <div class="text-center">
+                     <p class="text-lg text-gray-700 mb-4">Have a magical story from your trip?</p>
+                     <a href="#" class="inline-block bg-moonstone hover:bg-moonstone-dark text-base-black font-bold py-3 px-8 rounded-lg transition duration-300">Share Your Story & Win!</a>
+                 </div>
+            </div>
+        </section>
+
+        <!-- 6. Group Travel & Community -->
+        <section class="py-16 px-4 bg-gray-50">
+             <div class="max-w-screen-xl mx-auto md:flex md:items-center md:space-x-12">
+                 <div class="md:w-1/2 mb-8 md:mb-0">
+                     <h2 class="text-3xl font-bold mb-4 text-hunter-green">Connect & Explore Together</h2>
+                     <p class="text-lg text-gray-600 mb-6">Travel is better shared. Join our vibrant community through:</p>
+                     <ul class="space-y-3 text-gray-700 list-disc list-inside mb-6">
+                         <li><span class="font-semibold">Age-Based Groups:</span> Connect with peers in similar life stages.</li>
+                         <li><span class="font-semibold">Random Adventurer Squads:</span> Perfect for solo travellers seeking new friends.</li>
+                         <li><span class="font-semibold">Enterprise Tours:</span> Unique team-building experiences.</li>
+                    </ul>
+                    <a href="#" class="text-moonstone hover:underline font-medium">Find Your Group →</a>
+                 </div>
+                 <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                     <!-- Placeholder for community images/screenshots -->
+                     <div class="bg-white p-3 rounded-lg shadow text-sm text-gray-600">
+                        <p class="font-semibold mb-1">💬 Group Chat Snippet:</p>
+                        <p>"Anyone else excited for the Mara game drive tomorrow?! 🤩" - Sarah</p>
+                        <p>"Definitely! Packed my binoculars! 🦓" - Mike</p>
+                     </div>
+                     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60" alt="Group travel photo" class="rounded-lg shadow object-cover h-40 w-full">
+                      <img src="https://images.unsplash.com/photo-1509228627-1d960797994-?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60" alt="Another group travel photo" class="rounded-lg shadow object-cover h-40 w-full">
+                     <div class="bg-white p-3 rounded-lg shadow text-sm text-gray-600">
+                         <p class="font-semibold mb-1">⭐ Review Highlight:</p>
+                         <p>"Met lifelong friends on the Kilimanjaro climb organized by TMS!" - Ben</p>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- 7. For Businesses & Teams -->
+        <section class="py-16 px-4 bg-hunter-green text-white">
+            <div class="max-w-screen-md mx-auto text-center">
+                 <h2 class="text-3xl font-bold mb-4">Magical Escapes for Your Team</h2>
+                 <p class="text-lg mb-8 opacity-90">Elevate your corporate retreats and team-building events with unforgettable experiences in Kenya & Tanzania. Let us handle the planning.</p>
+                 <a href="#" class="inline-block bg-white hover:bg-gray-100 text-hunter-green font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Plan a Team Escape</a>
+            </div>
+        </section>
+
+        <!-- 8. Newsletter CTA -->
+        <section class="py-16 px-4 bg-moonstone/10">
+             <div class="max-w-screen-md mx-auto text-center">
+                 <h2 class="text-3xl font-bold mb-4 text-hunter-green">Get the Magic in Your Inbox</h2>
+                 <p class="text-lg text-gray-600 mb-8">New trips, last-minute surprises, and stories that make you want to pack your bags.</p>
+                 <form action="#" class="max-w-lg mx-auto">
+                    <div class="flex flex-col sm:flex-row items-center gap-2">
+                        <label for="newsletter-email" class="sr-only">Email address</label>
+                        <input type="email" id="newsletter-email" placeholder="Enter your email" required class="w-full px-4 py-3 rounded-lg border-gray-300 focus:ring-moonstone focus:border-moonstone text-gray-900" />
+                        <button type="submit" class="w-full sm:w-auto bg-hunter-green hover:bg-hunter-green-dark text-white font-bold py-3 px-6 rounded-lg transition duration-300">Subscribe</button>
+                    </div>
+                 </form>
+            </div>
+        </section>
+
+        <!-- 9. Trust Signals -->
+        <section class="py-12 px-4">
+            <div class="max-w-screen-xl mx-auto text-center">
+                 <h3 class="text-xl font-semibold text-gray-600 mb-8">Trusted by Travellers & Partners</h3>
+                 <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-8">
+                     <!-- Partner Logos (Placeholders) -->
+                     <div class="h-10 w-24 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">Partner Logo 1</div>
+                     <div class="h-10 w-24 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">Certification</div>
+                     <div class="h-10 w-24 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">Partner Logo 2</div>
+                     <div class="h-10 w-24 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">Travel Assoc.</div>
+                 </div>
+                 <!-- Payment Methods -->
+                  <div class="flex justify-center items-center space-x-4">
+                      <span class="text-sm text-gray-500">Secure Payments:</span>
+                      <!-- Replace with actual icons/logos -->
+                      <div class="h-8 w-12 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">Mpesa</div>
+                      <div class="h-8 w-12 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">Card</div>
+                      <div class="h-8 w-12 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">PayPal</div>
+                  </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-base-black text-gray-300">
+        <!-- Optional Top Tier CTA -->
+        <div class="bg-hunter-green py-8 px-4 text-center text-white">
+             <h3 class="text-2xl font-semibold mb-4">Ready to make memories that last a lifetime? 🌍✨</h3>
+             <div class="space-x-4">
+                 <a href="#" class="inline-block bg-moonstone hover:bg-moonstone-dark text-base-black font-bold py-2 px-6 rounded-lg transition duration-300">Book Your Adventure</a>
+                 <a href="#" class="inline-block bg-white/20 hover:bg-white/30 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Surprise Me</a>
+             </div>
+        </div>
+
+        <!-- Middle Tier - Main Grid -->
+        <div class="max-w-screen-xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 py-16 px-4">
+             <!-- Column 1: Explore -->
+            <div>
+                <h4 class="font-semibold text-white mb-4 text-lg">Explore</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-moonstone">Emotion-Based Trips</a></li>
+                    <li><a href="#" class="hover:text-moonstone">Surprise Me ✨</a></li>
+                    <li><a href="#" class="hover:text-moonstone">Group Adventures</a></li>
+                    <li><a href="#" class="hover:text-moonstone">TravelMatch™ ❤️</a></li>
+                    <li><a href="#" class="hover:text-moonstone">Tailored Trips</a></li>
+                </ul>
+            </div>
+             <!-- Column 2: Destinations -->
+             <div>
+                 <h4 class="font-semibold text-white mb-4 text-lg">Destinations</h4>
+                 <ul class="space-y-2 text-sm">
+                    <li><span class="font-semibold text-gray-400">Kenya</span></li>
+                    <li class="ml-2"><a href="#" class="hover:text-moonstone">Maasai Mara</a></li>
+                    <li class="ml-2"><a href="#" class="hover:text-moonstone">Diani Beach</a></li>
+                    <li class="ml-2"><a href="#" class="hover:text-moonstone">Nairobi</a></li>
+                    <li class="mt-2"><span class="font-semibold text-gray-400">Tanzania</span></li>
+                     <li class="ml-2"><a href="#" class="hover:text-moonstone">Serengeti</a></li>
+                     <li class="ml-2"><a href="#" class="hover:text-moonstone">Zanzibar</a></li>
+                     <li class="ml-2"><a href="#" class="hover:text-moonstone">Kilimanjaro</a></li>
+                 </ul>
+             </div>
+             <!-- Column 3: Experiences -->
+              <div>
+                 <h4 class="font-semibold text-white mb-4 text-lg">Experiences</h4>
+                 <ul class="space-y-2 text-sm">
+                     <li><a href="#" class="hover:text-moonstone">Stargazing Nights 🌌</a></li>
+                     <li><a href="#" class="hover:text-moonstone">Hidden Gem Hunts 🔍</a></li>
+                     <li><a href="#" class="hover:text-moonstone">Story of the Month 🏆</a></li>
+                     <li><a href="#" class="hover:text-moonstone">Healing Escapes</a></li>
+                     <li><a href="#" class="hover:text-moonstone">Romance & Honeymoons 💞</a></li>
+                 </ul>
+             </div>
+            <!-- Column 4: About -->
+             <div>
+                 <h4 class="font-semibold text-white mb-4 text-lg">About</h4>
+                 <ul class="space-y-2 text-sm">
+                     <li><a href="#" class="hover:text-moonstone">Why Magical Savannah</a></li>
+                     <li><a href="#" class="hover:text-moonstone">Meet the Team</a></li>
+                     <li><a href="#" class="hover:text-moonstone">Private Tours</a></li>
+                     <li><a href="#" class="hover:text-moonstone">Trip Coordinators</a></li>
+                     <li><a href="#" class="hover:text-moonstone">Referral Program</a></li>
+                     <li><a href="#" class="hover:text-moonstone">Contact Us</a></li>
+                 </ul>
+             </div>
+             <!-- Column 5: Stay Connected -->
+             <div>
+                 <h4 class="font-semibold text-white mb-4 text-lg">Stay Connected</h4>
+                 <form action="#" class="mb-4">
+                     <label for="footer-email" class="sr-only">Email Newsletter Signup</label>
+                     <input type="email" id="footer-email" placeholder="Your Email" class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 focus:border-moonstone focus:ring-moonstone text-sm text-white placeholder-gray-400">
+                     <button type="submit" class="w-full mt-2 bg-moonstone hover:bg-moonstone-dark text-base-black text-sm font-semibold py-2 px-4 rounded">Subscribe</button>
+                 </form>
+                 <div class="flex space-x-3 mb-2 text-lg">
+                     <!-- Replace with actual icons -->
+                     <a href="#" class="hover:text-moonstone">IG</a>
+                     <a href="#" class="hover:text-moonstone">X</a>
+                     <a href="#" class="hover:text-moonstone">TikTok</a>
+                     <a href="#" class="hover:text-moonstone">FB</a>
+                 </div>
+                 <a href="mailto:inquiries@themagicalsavannah.com" class="text-sm hover:text-moonstone break-all">inquiries@themagicalsavannah.com</a>
+             </div>
+        </div>
+
+        <!-- Bottom Tier - Legal + Extras -->
+        <div class="border-t border-gray-700 py-6 px-4 text-center">
+            <p class="text-xs text-gray-400">
+                © 2025 The Magical Savannah. All rights reserved. |
+                <a href="#" class="hover:text-moonstone">Privacy Policy</a> |
+                <a href="#" class="hover:text-moonstone">Terms of Use</a> |
+                <a href="#" class="hover:text-moonstone">Site Map</a> |
+                Made by @benexl
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
-
 </html>
