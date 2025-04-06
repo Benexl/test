@@ -3,363 +3,619 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destinations | Horizon Travel</title>
+    <title>The Magical Savannah - Not just places—memories for a lifetime.</title>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Flowbite CSS CDN -->
+
+    <!-- Flowbite CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    <!-- Custom Styles & Color Variables -->
     <style>
-        .destination-card:hover .destination-image {
-            transform: scale(1.05);
+        /* Define custom colors for easier use if needed, though Tailwind's arbitrary values are used below */
+        :root {
+            --hunter-green: #2C5F2D;
+            --black: #090909;
+            --pale-dogwood: #E7CFCD;
+            --tea-green: #D7FCD4;
+            --moonstone: #69A2B0;
+        }
+        /* Example: Apply a custom font if desired */
+        /* body { font-family: 'Your Chosen Font', sans-serif; } */
+
+        /* Ensure smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+         /* Basic styling for mega menu structure */
+        .mega-menu {
+            display: none; /* Hidden by default */
+            position: absolute;
+            left: 0;
+            width: 100%; /* Or specific width like 48rem */
+            background-color: white; /* Adjust as needed */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            z-index: 50;
+            padding: 1rem;
+            margin-top: 0.5rem; /* Spacing from button */
+        }
+        .mega-menu-trigger:hover + .mega-menu,
+        .mega-menu:hover {
+            display: grid; /* Or block/flex depending on content */
         }
     </style>
+
+    <script>
+        // Optional: Configure Tailwind JIT if needed, but direct arbitrary values work well with CDN
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hunter-green': '#2C5F2D',
+                        'black': '#090909', // Note: Tailwind 'black' is #000, use this custom one if #090909 is specific
+                        'pale-dogwood': '#E7CFCD',
+                        'tea-green': '#D7FCD4',
+                        'moonstone': '#69A2B0',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="font-sans bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-blue-600 text-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center">
-                    <a href="index.html" class="text-xl font-bold">Horizon Travel</a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-500">Home</a>
-                        <a href="destinations.html" class="px-3 py-2 rounded-md text-sm font-medium bg-blue-700">Destinations</a>
-                        <a href="tours.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-500">Tours</a>
-                        <a href="about.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-500">About</a>
-                        <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-500">Contact</a>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-blue-500 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <!-- Hamburger icon -->
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
+<body class="bg-white text-[#090909]">
+
+    <!-- ===============================
+         Navbar Section
+    ================================ -->
+    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 sticky top-0 z-50 shadow-sm">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <span class="self-center text-xl font-semibold whitespace-nowrap text-[#2C5F2D]">The Magical Savannah</span>
+                <!-- Optional: <img src="logo.png" class="mr-3 h-6 sm:h-9" alt="The Magical Savannah Logo" /> -->
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+
+            <!-- Primary Nav Links & Right Side -->
+            <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                    <!-- Explore Dropdown -->
+                    <li>
+                        <button id="exploreDropdownButton" data-dropdown-toggle="exploreDropdown" class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#69A2B0] lg:p-0 lg:w-auto">Explore <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="exploreDropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
+                            <ul class="py-1 text-sm text-gray-700" aria-labelledby="exploreDropdownButton">
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Emotion-Based Trips</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Group Adventures</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Surprise Me ✨</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Wishlist 💖</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- Experiences Dropdown -->
+                    <li>
+                         <button id="experiencesDropdownButton" data-dropdown-toggle="experiencesDropdown" class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#69A2B0] lg:p-0 lg:w-auto">Experiences <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                        <div id="experiencesDropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
+                            <ul class="py-1 text-sm text-gray-700" aria-labelledby="experiencesDropdownButton">
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">TravelMatch™ ❤️</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Stories</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Story of the Month 🏆</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Tailored Trios</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Stargazing</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Hidden Gem Hunts</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                     <!-- Travel Themes Dropdown -->
+                    <li>
+                         <button id="themesDropdownButton" data-dropdown-toggle="themesDropdown" class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#69A2B0] lg:p-0 lg:w-auto">Travel Themes <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                        <div id="themesDropdown" class="hidden z-10 w-52 bg-white rounded divide-y divide-gray-100 shadow">
+                             <ul class="py-1 text-sm text-gray-700" aria-labelledby="themesDropdownButton">
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Wellness & Retreats</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Romance & Honeymoons 💞</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Thrill & Adventure</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Nature & Wildlife</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Urban Vibes 🏙️</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Food & Culture 🍲</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Soul & Spiritual</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Healing Escapes</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                     <!-- Destinations Mega Menu/Dropdown -->
+                    <li class="relative"> <!-- Added relative positioning for potential mega menu absolute positioning -->
+                         <button id="destinationsDropdownButton" data-dropdown-toggle="destinationsDropdown" class="mega-menu-trigger flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#69A2B0] lg:p-0 lg:w-auto">Destinations <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                        <!-- Mega Menu Structure (Simplified Grid Example) -->
+                        <div id="destinationsDropdown" class="mega-menu grid grid-cols-2 gap-4 lg:w-[30rem]">
+                           <div>
+                               <h3 class="font-semibold text-gray-900 mb-2">Kenya</h3>
+                               <ul class="space-y-1 text-sm text-gray-700">
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Nairobi</a></li>
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Maasai Mara</a></li>
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Diani Beach</a></li>
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Lake Naivasha</a></li>
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Mount Kenya</a></li>
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Amboseli</a></li>
+                               </ul>
+                           </div>
+                           <div>
+                                <h3 class="font-semibold text-gray-900 mb-2">Tanzania</h3>
+                                <ul class="space-y-1 text-sm text-gray-700">
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Serengeti</a></li>
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Zanzibar</a></li>
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Mount Kilimanjaro</a></li>
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Ngorongoro Crater</a></li>
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Arusha</a></li>
+                                    <li><a href="#" class="hover:text-[#69A2B0]">Lake Manyara</a></li>
+                               </ul>
+                           </div>
+                        </div>
+                        <!-- Fallback for non-JS / basic dropdown -->
+                         <!-- <div id="destinationsDropdown" class="hidden z-10 w-56 bg-white rounded divide-y divide-gray-100 shadow "> ... simple list ... </div> -->
+                    </li>
+                    <!-- About Us Dropdown -->
+                    <li>
+                         <button id="aboutDropdownButton" data-dropdown-toggle="aboutDropdown" class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#69A2B0] lg:p-0 lg:w-auto">About Us <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                        <div id="aboutDropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
+                            <ul class="py-1 text-sm text-gray-700" aria-labelledby="aboutDropdownButton">
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Why Magical Savannah</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">The Team</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Private Tours</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Trip Coordinators</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Referral Program</a></li>
+                                <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Right Side Items -->
+                <div class="flex items-center lg:order-2 lg:ml-4 mt-4 lg:mt-0 space-x-2">
+                     <!-- Search Icon -->
+                     <button type="button" data-modal-toggle="search-modal" class="text-gray-500 hover:text-[#69A2B0] focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
+                    <!-- Login/Sign Up -->
+                    <a href="#" class="text-gray-800 hover:text-[#69A2B0] font-medium rounded-lg text-sm px-3 py-2 lg:px-4 lg:py-2 focus:outline-none">Login / Sign Up</a>
+                    <!-- Book Today CTA -->
+                    <a href="#" class="text-[#090909] bg-[#69A2B0] hover:bg-[#558a96] focus:ring-4 focus:ring-[#69A2B0]/50 font-bold rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 focus:outline-none whitespace-nowrap">Book Today</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="relative">
-        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Travel destinations" class="w-full h-96 object-cover">
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <div class="text-center px-4">
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Explore Our Destinations</h1>
-                <p class="text-xl text-white mb-8 max-w-2xl mx-auto">Discover the world's most breathtaking places with our curated selection of destinations</p>
+    <!-- Search Modal (Flowbite) -->
+    <div id="search-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+            <div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5">
+                <button type="button" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="search-modal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+                <h3 class="mb-4 text-xl font-medium text-gray-900">Search Trips</h3>
+                <form action="#" method="GET">
+                    <input type="search" name="query" placeholder="Search destinations, experiences..." class="w-full p-2 border border-gray-300 rounded-lg focus:ring-[#69A2B0] focus:border-[#69A2B0]" required>
+                    <button type="submit" class="mt-4 w-full text-white bg-[#2C5F2D] hover:bg-[#1e421f] focus:ring-4 focus:outline-none focus:ring-[#2C5F2D]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Search</button>
+                </form>
             </div>
         </div>
     </div>
 
-    <!-- Destinations Filter -->
-    <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
-            <h2 class="text-3xl font-bold mb-4 md:mb-0">All Destinations</h2>
-            <div class="flex space-x-2">
-                <button id="filter-all" class="px-4 py-2 bg-blue-600 text-white rounded-md">All</button>
-                <button id="filter-europe" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md">Europe</button>
-                <button id="filter-asia" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md">Asia</button>
-                <button id="filter-americas" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md">Americas</button>
-                <button id="filter-africa" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md">Africa</button>
+    <!-- ===============================
+         Hero Section
+    ================================ -->
+    <section class="relative bg-cover bg-center min-h-screen flex items-center justify-center text-center" style="background-image: url('https://images.unsplash.com/photo-1518015021434-306993830840?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');"> <!-- Replace with actual image URL -->
+        <div class="absolute inset-0 bg-[#090909] opacity-50"></div> <!-- Overlay -->
+        <div class="relative z-10 px-4 mx-auto max-w-screen-md">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+                Not just places—<span class="text-[#E7CFCD]">memories for a lifetime.</span>
+            </h1>
+            <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16">
+                Discover the heart of Kenya & Tanzania with curated experiences designed around how you want to feel.
+            </p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-[#090909] rounded-lg bg-[#69A2B0] hover:bg-[#558a96] focus:ring-4 focus:ring-[#69A2B0]/50">
+                    Start Your Journey Today
+                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+                <!-- Optional Mini Search -->
+                 <form class="flex justify-center">
+                    <input type="text" placeholder="How do you want to feel?" class="px-4 py-3 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#69A2B0] focus:border-[#69A2B0] w-full sm:w-auto" >
+                     <!-- <button type="submit" class="ml-2 p-3 bg-[#2C5F2D] text-white rounded-lg">?</button> -->
+                </form>
             </div>
-        </div>
-
-        <!-- Destinations Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Destination 1 - Europe -->
-            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="europe">
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Paris, France" class="w-full h-64 object-cover destination-image transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold">Paris, France</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Europe</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">The City of Light, famous for its art, fashion, gastronomy and culture.</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span class="text-gray-500 line-through mr-2">$1,899</span>
-                            <span class="text-lg font-bold text-blue-600">$1,599</span>
-                        </div>
-                        <a href="paris.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Destination 2 - Asia -->
-            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="asia">
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tokyo, Japan" class="w-full h-64 object-cover destination-image transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold">Tokyo, Japan</h3>
-                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Asia</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">A dynamic metropolis where cutting-edge technology meets traditional culture.</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span class="text-gray-500 line-through mr-2">$2,299</span>
-                            <span class="text-lg font-bold text-blue-600">$1,999</span>
-                        </div>
-                        <a href="tokyo.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Destination 3 - Americas -->
-            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="americas">
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="New York, USA" class="w-full h-64 object-cover destination-image transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold">New York, USA</h3>
-                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Americas</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">The city that never sleeps, with iconic landmarks and endless energy.</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span class="text-gray-500 line-through mr-2">$1,599</span>
-                            <span class="text-lg font-bold text-blue-600">$1,299</span>
-                        </div>
-                        <a href="new-york.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Destination 4 - Africa -->
-            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="africa">
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cape Town, South Africa" class="w-full h-64 object-cover destination-image transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold">Cape Town, South Africa</h3>
-                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Africa</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">Stunning coastal beauty, wildlife, and vibrant culture at the tip of Africa.</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span class="text-gray-500 line-through mr-2">$2,199</span>
-                            <span class="text-lg font-bold text-blue-600">$1,899</span>
-                        </div>
-                        <a href="cape-town.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Destination 5 - Europe -->
-            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="europe">
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Santorini, Greece" class="w-full h-64 object-cover destination-image transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold">Santorini, Greece</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Europe</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">Whitewashed buildings and breathtaking sunsets over the Aegean Sea.</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span class="text-gray-500 line-through mr-2">$1,799</span>
-                            <span class="text-lg font-bold text-blue-600">$1,499</span>
-                        </div>
-                        <a href="santorini.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Destination 6 - Asia -->
-            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="asia">
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bali, Indonesia" class="w-full h-64 object-cover destination-image transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold">Bali, Indonesia</h3>
-                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Asia</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">Tropical paradise with lush jungles, pristine beaches, and spiritual retreats.</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span class="text-gray-500 line-through mr-2">$1,999</span>
-                            <span class="text-lg font-bold text-blue-600">$1,699</span>
-                        </div>
-                        <a href="bali.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Destination 7 - Americas -->
-            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="americas">
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rio de Janeiro, Brazil" class="w-full h-64 object-cover destination-image transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold">Rio de Janeiro, Brazil</h3>
-                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Americas</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">Vibrant city with stunning beaches, lush mountains, and carnival spirit.</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span class="text-gray-500 line-through mr-2">$1,899</span>
-                            <span class="text-lg font-bold text-blue-600">$1,599</span>
-                        </div>
-                        <a href="rio.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Destination 8 - Europe -->
-            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="europe">
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rome, Italy" class="w-full h-64 object-cover destination-image transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold">Rome, Italy</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Europe</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">The Eternal City with ancient ruins, Renaissance art, and delicious cuisine.</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span class="text-gray-500 line-through mr-2">$1,699</span>
-                            <span class="text-lg font-bold text-blue-600">$1,399</span>
-                        </div>
-                        <a href="rome.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Destination 9 - Asia -->
-            <div class="destination-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl" data-region="asia">
-                <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kyoto, Japan" class="w-full h-64 object-cover destination-image transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold">Kyoto, Japan</h3>
-                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Asia</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">Ancient capital with serene temples, traditional tea houses, and cherry blossoms.</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span class="text-gray-500 line-through mr-2">$2,099</span>
-                            <span class="text-lg font-bold text-blue-600">$1,799</span>
-                        </div>
-                        <a href="kyoto.html" class="text-blue-600 font-medium hover:text-blue-800">Explore →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Pagination -->
-        <div class="mt-12 flex justify-center">
-            <nav class="inline-flex rounded-md shadow">
-                <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">Previous</a>
-                <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-blue-600 font-medium">1</a>
-                <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">2</a>
-                <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">3</a>
-                <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">Next</a>
-            </nav>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="py-16 bg-blue-600 text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">Ready for Your Next Adventure?</h2>
-            <p class="text-xl mb-8">Sign up for exclusive deals and travel inspiration</p>
-            <form class="max-w-md mx-auto">
-                <div class="flex">
-                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-800">
-                    <button type="submit" class="bg-blue-800 hover:bg-blue-900 px-6 py-3 rounded-r-lg font-medium transition duration-300">Subscribe</button>
+    <!-- ===============================
+         Emotion-Based Discovery
+    ================================ -->
+    <section class="py-12 px-4 bg-[#D7FCD4]">
+        <div class="max-w-screen-lg mx-auto text-center">
+            <h2 class="mb-8 text-3xl font-bold text-[#2C5F2D] tracking-tight">How do you want this trip to make you feel?</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+                <!-- Emotion Card Example -->
+                <a href="#" class="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-2">😌</div>
+                    <h3 class="text-lg font-semibold text-gray-800">Peaceful</h3>
+                </a>
+                 <a href="#" class="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-2">🏃</div>
+                    <h3 class="text-lg font-semibold text-gray-800">Adventurous</h3>
+                </a>
+                 <a href="#" class="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-2">💞</div>
+                    <h3 class="text-lg font-semibold text-gray-800">Romantic</h3>
+                </a>
+                 <a href="#" class="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-2">🌿</div>
+                    <h3 class="text-lg font-semibold text-gray-800">Rejuvenated</h3>
+                </a>
+                 <a href="#" class="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-2">🤩</div>
+                    <h3 class="text-lg font-semibold text-gray-800">Spontaneous</h3>
+                </a>
+                <!-- Repeat for other emotions -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================
+         Featured Experiences
+    ================================ -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="mb-4 text-3xl md:text-4xl font-bold text-[#090909]">Featured Magical Experiences</h2>
+            <p class="mb-10 text-gray-600 lg:text-lg">Handpicked adventures you won't forget.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Experience Card Example -->
+                <div class="bg-[#E7CFCD] p-6 rounded-lg shadow-md text-left">
+                    <h3 class="text-xl font-semibold text-[#2C5F2D] mb-2">Tailored Trios</h3>
+                    <p class="text-gray-700 mb-3">Curated 3-stop journeys hitting iconic spots and hidden gems.</p>
+                    <a href="#" class="font-medium text-[#69A2B0] hover:underline">Explore Trios →</a>
                 </div>
+                 <div class="bg-[#E7CFCD] p-6 rounded-lg shadow-md text-left">
+                    <h3 class="text-xl font-semibold text-[#2C5F2D] mb-2">Stargazing Nights 🌌</h3>
+                    <p class="text-gray-700 mb-3">Unforgettable evenings under the vast African sky, guided by experts.</p>
+                     <a href="#" class="font-medium text-[#69A2B0] hover:underline">Look Up →</a>
+                </div>
+                 <div class="bg-[#E7CFCD] p-6 rounded-lg shadow-md text-left">
+                    <h3 class="text-xl font-semibold text-[#2C5F2D] mb-2">Hidden Gem Hunts 🔍</h3>
+                    <p class="text-gray-700 mb-3">Go off the beaten path to discover local secrets and unique spots.</p>
+                    <a href="#" class="font-medium text-[#69A2B0] hover:underline">Start Hunting →</a>
+                </div>
+                <div class="bg-[#E7CFCD] p-6 rounded-lg shadow-md text-left">
+                    <h3 class="text-xl font-semibold text-[#2C5F2D] mb-2">"Surprise Me" Adventures ✨</h3>
+                    <p class="text-gray-700 mb-3">Feeling spontaneous? Let us plan a magical mystery trip for you!</p>
+                    <a href="#" class="font-medium text-[#69A2B0] hover:underline">Get Surprised →</a>
+                </div>
+                 <div class="bg-[#E7CFCD] p-6 rounded-lg shadow-md text-left">
+                    <h3 class="text-xl font-semibold text-[#2C5F2D] mb-2">TravelMatch™ ❤️</h3>
+                    <p class="text-gray-700 mb-3">Find companions who share your travel style and desired vibe.</p>
+                    <a href="#" class="font-medium text-[#69A2B0] hover:underline">Find Your Match →</a>
+                </div>
+                <!-- Add more experience cards as needed -->
+            </div>
+        </div>
+    </section>
+
+     <!-- ===============================
+         Top Destinations (Carousel)
+    ================================ -->
+    <section class="py-16 px-4 bg-[#D7FCD4]">
+        <div class="max-w-screen-xl mx-auto text-center">
+             <h2 class="mb-10 text-3xl md:text-4xl font-bold text-[#2C5F2D]">Explore Top Destinations</h2>
+
+             <div id="destination-carousel" class="relative w-full" data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                     <!-- Item 1: Maasai Mara -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="https://images.unsplash.com/photo-1534330280514-5f0da9433177?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Maasai Mara">
+                         <div class="absolute inset-x-0 bottom-0 bg-black/50 p-4 text-white">
+                             <h3 class="text-xl font-semibold">Maasai Mara, Kenya</h3>
+                             <p class="text-sm">Iconic wildlife encounters. <span class="bg-[#69A2B0] text-xs px-2 py-1 rounded">🌿 Wildlife</span></p>
+                         </div>
+                    </div>
+                    <!-- Item 2: Serengeti -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="https://images.unsplash.com/photo-1618321907821-18633f6ab85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Serengeti">
+                         <div class="absolute inset-x-0 bottom-0 bg-black/50 p-4 text-white">
+                             <h3 class="text-xl font-semibold">Serengeti, Tanzania</h3>
+                             <p class="text-sm">Endless plains & The Great Migration. <span class="bg-[#69A2B0] text-xs px-2 py-1 rounded">🏃 Adventurous</span></p>
+                         </div>
+                    </div>
+                    <!-- Item 3: Zanzibar -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="https://images.unsplash.com/photo-1589890731169-a5515c7b8cde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1838&q=80" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Zanzibar">
+                        <div class="absolute inset-x-0 bottom-0 bg-black/50 p-4 text-white">
+                             <h3 class="text-xl font-semibold">Zanzibar, Tanzania</h3>
+                             <p class="text-sm">Spice islands, history, and beaches. <span class="bg-[#E7CFCD] text-black text-xs px-2 py-1 rounded">💞 Romantic</span></p>
+                         </div>
+                    </div>
+                    <!-- Item 4: Mount Kenya -->
+                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="https://images.unsplash.com/photo-1591080114383-271bbad9bfcc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Mount Kenya">
+                         <div class="absolute inset-x-0 bottom-0 bg-black/50 p-4 text-white">
+                             <h3 class="text-xl font-semibold">Mount Kenya, Kenya</h3>
+                             <p class="text-sm">Majestic peaks and alpine flora. <span class="bg-[#69A2B0] text-xs px-2 py-1 rounded">🏃 Thrill</span></p>
+                         </div>
+                    </div>
+                    <!-- Item 5: Ngorongoro Crater -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="https://images.unsplash.com/photo-1589400197608-0fc965464129?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Ngorongoro Crater">
+                        <div class="absolute inset-x-0 bottom-0 bg-black/50 p-4 text-white">
+                             <h3 class="text-xl font-semibold">Ngorongoro Crater, Tanzania</h3>
+                             <p class="text-sm">A unique ecosystem teeming with wildlife. <span class="bg-[#D7FCD4] text-black text-xs px-2 py-1 rounded">🌿 Nature</span></p>
+                         </div>
+                    </div>
+                </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                </div>
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================
+         Stories that Moved Us
+    ================================ -->
+    <section class="py-16 px-4 bg-white">
+         <div class="max-w-screen-xl mx-auto">
+             <h2 class="text-3xl md:text-4xl font-bold text-center text-[#090909] mb-10">Stories That Moved Us 🏆</h2>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                 <!-- Story of the Month Spotlight -->
+                 <div class="md:col-span-2 bg-[#E7CFCD] p-6 rounded-lg shadow-lg">
+                     <h3 class="text-2xl font-semibold text-[#2C5F2D] mb-3">Story of the Month: Finding Serenity in the Serengeti</h3>
+                     <img src="https://images.unsplash.com/photo-1589828556407-44601b0f886d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Serengeti Sunset" class="rounded-lg mb-4 w-full h-64 object-cover">
+                     <p class="text-gray-700 mb-4">"I never expected the profound peace I found watching the sunset over the endless plains. The Magical Savannah didn't just plan a trip; they orchestrated an experience that touched my soul..." - Amina K.</p>
+                     <a href="#" class="font-medium text-[#69A2B0] hover:underline">Read Amina's Full Story →</a>
+                 </div>
+                 <!-- Other Stories / CTA -->
+                 <div class="space-y-6">
+                     <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <h4 class="font-semibold text-gray-800">Diani Beach Bliss</h4>
+                        <p class="text-sm text-gray-600">"Best honeymoon ever! Perfect blend of relaxation and adventure." - David & Sarah</p>
+                        <a href="#" class="text-xs text-[#69A2B0] hover:underline">View Story</a>
+                     </div>
+                     <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <h4 class="font-semibold text-gray-800">Conquering Kili with Friends</h4>
+                        <p class="text-sm text-gray-600">"The group support made reaching the summit possible. Unforgettable!" - The Hiking Crew</p>
+                        <a href="#" class="text-xs text-[#69A2B0] hover:underline">View Story</a>
+                     </div>
+                     <!-- Share Your Story CTA -->
+                     <div class="bg-[#2C5F2D] text-white p-6 rounded-lg shadow-lg text-center">
+                         <h3 class="text-xl font-semibold mb-3">Share Your Magical Story!</h3>
+                         <p class="mb-4 text-sm">Your adventure could inspire others (and win you a free trip!)</p>
+                         <a href="#" class="inline-block bg-[#69A2B0] hover:bg-[#558a96] text-[#090909] font-bold rounded-lg text-sm px-5 py-2.5 focus:outline-none">Submit Your Story</a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+    </section>
+
+    <!-- ===============================
+         Group Travel & Community
+    ================================ -->
+    <section class="py-16 px-4 bg-[#D7FCD4]">
+        <div class="max-w-screen-lg mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#2C5F2D] mb-4">Travel Together, Create Magic</h2>
+            <p class="mb-10 text-gray-700 lg:text-lg">Connect with fellow adventurers through our unique group experiences.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-[#090909] mb-2">👥 Age-Based Groups</h3>
+                    <p class="text-gray-600">Explore with peers in your age bracket (e.g., 20s-30s, 40+, Family Adventures).</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-[#090909] mb-2">🎲 Random Adventurer Squads</h3>
+                    <p class="text-gray-600">Join a diverse group matched by travel style for spontaneous fun.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-[#090909] mb-2">🏢 Enterprise Tours</h3>
+                    <p class="text-gray-600">Custom-designed trips for companies, teams, and organizations.</p>
+                </div>
+            </div>
+             <!-- Placeholder for reviews/screenshots -->
+            <div class="mt-10">
+                <p class="italic text-gray-600">"Met lifelong friends on my 'Surprise Me' group trip!" - Review Snippet</p>
+                <!-- Add placeholder image/blockquote for group chat/review screenshots -->
+                <!-- <img src="placeholder-group-chat.png" alt="Group chat example" class="mx-auto mt-4 rounded shadow-md w-1/2"> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================
+         For Businesses & Teams
+    ================================ -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-screen-md mx-auto text-center">
+             <h2 class="text-3xl md:text-4xl font-bold text-[#2C5F2D] mb-4">Magical Escapes for Your Team</h2>
+            <p class="mb-8 text-gray-700 lg:text-lg">Boost morale, foster collaboration, and reward your employees with unforgettable corporate travel experiences, planned to perfection.</p>
+             <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-[#2C5F2D] hover:bg-[#1e421f] focus:ring-4 focus:ring-[#2C5F2D]/50">
+                Plan a Team Escape
+            </a>
+        </div>
+    </section>
+
+     <!-- ===============================
+         Newsletter CTA
+    ================================ -->
+    <section class="py-12 px-4 bg-[#E7CFCD]">
+         <div class="max-w-screen-md mx-auto text-center">
+            <h2 class="text-3xl font-bold text-[#2C5F2D] mb-3 tracking-tight">Get the magic in your inbox. ✨</h2>
+            <p class="mb-6 text-gray-800 md:text-lg">New trips, last-minute surprises, stories that make you want to pack.</p>
+            <form action="#" class="flex flex-col sm:flex-row justify-center items-center gap-2 max-w-sm mx-auto">
+                <input type="email" placeholder="Enter your email" class="w-full sm:w-auto flex-grow p-3 border border-gray-300 rounded-lg focus:ring-[#69A2B0] focus:border-[#69A2B0]" required>
+                <button type="submit" class="w-full sm:w-auto text-[#090909] bg-[#69A2B0] hover:bg-[#558a96] focus:ring-4 focus:ring-[#69A2B0]/50 font-bold rounded-lg text-sm px-5 py-3 focus:outline-none">Subscribe</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Horizon Travel</h3>
-                    <p class="text-gray-400">Making dream vacations a reality since 2008.</p>
+    <!-- ===============================
+         Trust Signals
+    ================================ -->
+    <section class="py-10 px-4 bg-gray-50">
+        <div class="max-w-screen-xl mx-auto">
+            <h3 class="text-center text-sm font-semibold text-gray-500 uppercase mb-6">Trusted by Travelers & Partners</h3>
+             <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <!-- Partner Logos (Placeholders) -->
+                <div class="text-gray-400 text-center"> <!-- Replace with <img> -->
+                    <svg class="w-24 h-8 mx-auto" fill="currentColor" viewBox="0 0 100 30"><text x="50" y="20" text-anchor="middle">Partner Logo 1</text></svg>
                 </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="destinations.html" class="text-gray-400 hover:text-white">Destinations</a></li>
-                        <li><a href="tours.html" class="text-gray-400 hover:text-white">Special Offers</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
-                    </ul>
+                <div class="text-gray-400 text-center">
+                     <svg class="w-24 h-8 mx-auto" fill="currentColor" viewBox="0 0 100 30"><text x="50" y="20" text-anchor="middle">Certification</text></svg>
                 </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Support</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
-                    <address class="text-gray-400 not-italic">
-                        <p>123 Travel Street</p>
-                        <p>San Francisco, CA 94107</p>
-                        <p class="mt-2">Phone: (555) 123-4567</p>
-                        <p>Email: info@horizontravel.com</p>
-                    </address>
-                </div>
+                <!-- Testimonial Snippet -->
+                 <blockquote class="text-center text-gray-600 italic max-w-xs">
+                    "Flawless planning and incredible guides. Highly recommend!"
+                 </blockquote>
+                 <!-- Payment Badges -->
+                <div class="flex justify-center items-center gap-4 flex-wrap">
+                     <span class="text-sm font-medium text-gray-600">Secure Payments:</span>
+                     <img src="https://via.placeholder.com/60x25.png?text=Mpesa" alt="Mpesa" class="h-6"> <!-- Replace with actual badge -->
+                     <img src="https://via.placeholder.com/60x25.png?text=Card" alt="Visa/Mastercard" class="h-6"> <!-- Replace -->
+                     <img src="https://via.placeholder.com/60x25.png?text=PayPal" alt="PayPal" class="h-6"> <!-- Replace -->
+                 </div>
+             </div>
+        </div>
+    </section>
+
+
+    <!-- ===============================
+         Footer Section
+    ================================ -->
+    <footer class="bg-[#090909] text-gray-300">
+        <!-- 1. Top Tier - Call to Adventure -->
+        <div class="py-8 px-4 text-center bg-[#2C5F2D] text-white" style="background-image: linear-gradient(rgba(44, 95, 45, 0.8), rgba(44, 95, 45, 0.8)), url('https://www.transparenttextures.com/patterns/subtle-zebra-3d.png');"> <!-- Subtle pattern example -->
+             <h2 class="text-2xl font-bold mb-4">Ready to make memories that last a lifetime? 🌍✨</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="inline-block bg-[#69A2B0] hover:bg-[#558a96] text-[#090909] font-bold rounded-lg text-sm px-5 py-2.5 focus:outline-none">Book Your Adventure</a>
+                <a href="#" class="inline-block bg-[#E7CFCD] hover:bg-[#d1baba] text-[#090909] font-bold rounded-lg text-sm px-5 py-2.5 focus:outline-none">Surprise Me</a>
             </div>
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 Horizon Travel. All rights reserved.</p>
+        </div>
+
+        <!-- 2. Middle Tier - Main Footer Grid -->
+        <div class="max-w-screen-xl mx-auto py-12 px-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <!-- Column 1: Explore -->
+            <div>
+                <h3 class="mb-4 text-sm font-semibold text-white uppercase tracking-wider">🧭 Explore</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-[#69A2B0]">Emotion-Based Trips</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Surprise Me ✨</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Group Adventures</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">TravelMatch™ ❤️</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Tailored Trios</a></li>
+                </ul>
             </div>
+             <!-- Column 2: Destinations -->
+            <div>
+                <h3 class="mb-4 text-sm font-semibold text-white uppercase tracking-wider">🗺️ Destinations</h3>
+                 <ul class="space-y-2 text-sm">
+                    <li>
+                        <span class="font-medium text-gray-400">Kenya</span>
+                        <ul class="pl-3 mt-1 space-y-1">
+                             <li><a href="#" class="hover:text-[#69A2B0]">Maasai Mara</a></li>
+                             <li><a href="#" class="hover:text-[#69A2B0]">Diani Beach</a></li>
+                             <li><a href="#" class="hover:text-[#69A2B0]">Nairobi</a></li>
+                             <li><a href="#" class="hover:text-[#69A2B0] text-xs">More...</a></li>
+                        </ul>
+                    </li>
+                     <li class="mt-2">
+                        <span class="font-medium text-gray-400">Tanzania</span>
+                        <ul class="pl-3 mt-1 space-y-1">
+                             <li><a href="#" class="hover:text-[#69A2B0]">Serengeti</a></li>
+                             <li><a href="#" class="hover:text-[#69A2B0]">Zanzibar</a></li>
+                             <li><a href="#" class="hover:text-[#69A2B0]">Kilimanjaro</a></li>
+                             <li><a href="#" class="hover:text-[#69A2B0] text-xs">More...</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+             <!-- Column 3: Experiences -->
+            <div>
+                <h3 class="mb-4 text-sm font-semibold text-white uppercase tracking-wider">✨ Experiences</h3>
+                 <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-[#69A2B0]">Stargazing Nights</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Hidden Gem Hunts</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Story of the Month 🏆</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Healing Escapes</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Romance & Honeymoons 💞</a></li>
+                 </ul>
+            </div>
+            <!-- Column 4: About -->
+            <div>
+                 <h3 class="mb-4 text-sm font-semibold text-white uppercase tracking-wider">🧑‍🤝‍🧑 About</h3>
+                 <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-[#69A2B0]">Why Magical Savannah</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Meet the Team</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Private Tours</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Trip Coordinators</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Referral Program</a></li>
+                    <li><a href="#" class="hover:text-[#69A2B0]">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Column 5: Stay Connected -->
+            <div>
+                <h3 class="mb-4 text-sm font-semibold text-white uppercase tracking-wider">📬 Stay Connected</h3>
+                <form action="#" class="mb-4">
+                     <label for="footer-email" class="sr-only">Your email</label>
+                     <input type="email" id="footer-email" placeholder="Your email for magic" class="w-full p-2 text-sm text-gray-900 bg-gray-100 border border-gray-300 rounded-lg focus:ring-[#69A2B0] focus:border-[#69A2B0]">
+                     <button type="submit" class="mt-2 w-full text-white bg-[#69A2B0] hover:bg-[#558a96] font-medium rounded-lg text-xs px-4 py-2 text-center">Subscribe</button>
+                 </form>
+                 <div class="flex space-x-4 mb-2">
+                     <a href="#" class="hover:text-[#E7CFCD]">IG</a>
+                     <a href="#" class="hover:text-[#E7CFCD]">X</a>
+                     <a href="#" class="hover:text-[#E7CFCD]">TikTok</a>
+                     <a href="#" class="hover:text-[#E7CFCD]">FB</a>
+                 </div>
+                 <a href="mailto:inquiries@themagicalsavannah.com" class="text-sm hover:text-[#69A2B0]">inquiries@themagicalsavannah.com</a>
+            </div>
+        </div>
+
+        <!-- 3. Bottom Tier - Legal + Extras -->
+        <div class="py-4 px-4 border-t border-gray-700 text-center text-xs">
+            <span>© 2025 The Magical Savannah. All rights reserved.</span>
+            <span class="mx-2">|</span>
+            <a href="#" class="hover:text-[#69A2B0]">Privacy Policy</a>
+            <span class="mx-2">|</span>
+            <a href="#" class="hover:text-[#69A2B0]">Terms of Use</a>
+             <span class="mx-2">|</span>
+            <a href="#" class="hover:text-[#69A2B0]">Site Map</a>
+             <span class="mx-2 hidden sm:inline">|</span> <br class="sm:hidden"> <!-- Line break on small screens -->
+            <span class="mt-1 sm:mt-0 inline-block">Made by @benexl</span>
         </div>
     </footer>
 
     <!-- Flowbite JS CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-    
-    <!-- Filtering Functionality -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('[id^="filter-"]');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Update active button styling
-                    filterButtons.forEach(btn => {
-                        btn.classList.remove('bg-blue-600', 'text-white');
-                        btn.classList.add('bg-gray-200', 'hover:bg-gray-300');
-                    });
-                    this.classList.remove('bg-gray-200', 'hover:bg-gray-300');
-                    this.classList.add('bg-blue-600', 'text-white');
-                    
-                    // Filter destinations
-                    const region = this.id.split('-')[1];
-                    const destinations = document.querySelectorAll('.destination-card');
-                    
-                    destinations.forEach(destination => {
-                        if (region === 'all' || destination.dataset.region === region) {
-                            destination.style.display = 'block';
-                        } else {
-                            destination.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>

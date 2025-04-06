@@ -3,404 +3,587 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Magical Savannah - Feel the Journey</title>
-    <!-- Link Tailwind CSS (Required by Flowbite) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Link Flowbite CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-     <!-- Optional: Link Google Font (e.g., Poppins) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>The Magical Savannah - Kenya & Tanzania Travel Adventures</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Add a favicon -->
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif; /* Apply a modern, friendly font */
-        }
-        /* Custom color palette inspired by Savanna & Emotion */
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                'savannah-orange': {
-                  DEFAULT: '#F97316', // Vibrant accent
-                  light: '#FB923C',
-                  dark: '#EA580C',
-                },
-                 'savannah-brown': {
-                  light: '#EADDCD', // Light, earthy beige
-                  DEFAULT: '#B08968', // Mid-brown
-                  dark: '#7F5539',  // Darker brown text/elements
-                },
-                'savannah-green': {
-                    DEFAULT: '#6A994E', // Muted green
-                    dark: '#386641'
-                },
-                'savannah-blue': '#A6D8D4', // Sky/Water accent
-                'savannah-bg': '#FCF9F5', // Very light off-white background
-              }
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Flowbite CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    <!-- Custom Tailwind Configuration (for colors) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#2C5F2D',
+              'off-black': '#090909',
+              'savannah-gold': '#F4A261', // Complementary accent
+              'savannah-sand': '#E0C9A6', // Complementary neutral
+              'savannah-white': '#FAF8F4' // Slightly off-white for backgrounds
+            },
+            fontFamily: {
+              // Optional: Add a nice display font
+              // sans: ['Inter', 'sans-serif'], // Example using Inter
+              // serif: ['Merriweather', 'serif'],
             }
           }
         }
-        /* Simple fade-in animation */
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .fade-in { animation: fadeIn 1s ease-out forwards; }
+      }
+    </script>
+
+    <style>
+      /* Optional: Add smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Style scrollbar (optional) */
+      ::-webkit-scrollbar {
+          width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+          background: #2C5F2D; /* hunter-green */
+          border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+          background: #1e421f; /* Darker green */
+      }
     </style>
 </head>
-<body class="bg-savannah-bg text-savannah-brown-dark">
+<body class="bg-savannah-white text-off-black">
 
     <!-- Navbar -->
-    <header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200/80">
-        <nav class="container mx-auto px-4 py-3">
-            <div class="flex flex-wrap justify-between items-center">
-                <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse">
-                    <!-- Replace with SVG logo -->
-                     <svg class="w-8 h-8 text-savannah-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19.313 10.96h1.668l7.875-7.875 1.667 1.667L9.333 6.85l1.667 1.667L19.04 3.46h1.668l-5.805 5.804 1.667 1.667L23.687 5.19h1.668L17.689 12l7.665 7.664h-1.668L18.96 14.96l-1.667-1.667-1.667 1.667 2.176 2.176-1.667 1.667-7.875-7.875h-1.668l5.804 5.805L12.31 23.687l-1.667-1.667L8.46 20.84l-1.667-1.667-1.667 1.667-5.805 5.805H1.667L9.332 18.96 3.46 13.04H1.667l4.448-5.853L1.813 1.813 12 1.667l6.147.647-3.62 3.62-4.448-4.448L12 0 6.115 5.19Z" /></svg>
-                    <span class="self-center text-xl font-bold whitespace-nowrap text-savannah-brown-dark">The Magical Savannah</span>
-                </a>
-                <div class="flex items-center md:order-2 space-x-2 md:space-x-3 rtl:space-x-reverse">
-                     <!-- Login/Signup - Requires backend/JS -->
-                     <a href="#" class="text-sm font-medium text-savannah-brown-dark hover:text-savannah-orange px-3 py-2 rounded-lg">Log In</a>
-                     <a href="#" class="text-sm font-medium text-white bg-savannah-orange hover:bg-savannah-orange-dark focus:ring-4 focus:ring-orange-200 rounded-lg px-4 py-2 transition duration-300">Sign Up</a>
+    <nav class="bg-white border-gray-200 sticky top-0 z-50 shadow-sm">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <!-- Optional: <img src="logo.png" class="h-8" alt="The Magical Savannah Logo" /> -->
+            <span class="self-center text-2xl font-semibold whitespace-nowrap text-hunter-green">The Magical Savannah</span>
+        </a>
 
-                    <button data-collapse-toggle="navbar-content" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-content" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/></svg>
-                    </button>
+        <!-- Right Side Icons (Mobile Hidden) -->
+        <div class="flex items-center md:order-2 space-x-3 md:space-x-4 rtl:space-x-reverse">
+            <!-- Search Icon -->
+             <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1">
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+                <span class="sr-only">Search</span>
+            </button>
+             <div class="relative hidden md:block">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                    </svg>
+                    <span class="sr-only">Search icon</span>
                 </div>
-                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-content">
-                    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
-                        <li><a href="#experiences" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-savannah-orange md:p-0">Experiences</a></li>
-                        <li><a href="#community" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-savannah-orange md:p-0">Community</a></li>
-                        <li><a href="#stories" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-savannah-orange md:p-0">Stories</a></li>
-                        <li><a href="#connect" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-savannah-orange md:p-0">Connect</a></li>
-                        <li><a href="#enterprise" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-savannah-orange md:p-0">For Business</a></li>
-                    </ul>
-                </div>
+                <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-hunter-green focus:border-hunter-green" placeholder="Search trips...">
             </div>
-        </nav>
-    </header>
+
+            <!-- Login / Sign Up -->
+            <a href="#" class="text-gray-700 hover:text-hunter-green hidden md:inline-block px-3 py-2 text-sm font-medium">Login / Sign Up</a>
+
+            <!-- Book Today CTA -->
+            <a href="#" class="text-white bg-savannah-gold hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 text-center">Book Today</a>
+
+            <!-- Hamburger Menu Button -->
+            <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-dropdown" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Main Nav Links (Collapsible) -->
+        <div class="hidden w-full md:block md:w-auto md:order-1" id="navbar-dropdown">
+          <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+            <li> <!-- Explore -->
+              <button id="dropdownNavbarLinkExplore" data-dropdown-toggle="dropdownNavbarExplore" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-hunter-green md:p-0 md:w-auto">Explore <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg></button>
+              <!-- Dropdown menu -->
+              <div id="dropdownNavbarExplore" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                  <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownNavbarLinkExplore">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Emotion-Based Trips</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Group Adventures</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Surprise Me ✨</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Wishlist 💖</a></li>
+                  </ul>
+              </div>
+            </li>
+             <li> <!-- Experiences -->
+              <button id="dropdownNavbarLinkExperience" data-dropdown-toggle="dropdownNavbarExperience" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-hunter-green md:p-0 md:w-auto">Experiences <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg></button>
+              <!-- Dropdown menu -->
+              <div id="dropdownNavbarExperience" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                  <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownNavbarLinkExperience">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">TravelMatch™ ❤️</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Stories</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Story of the Month 🏆</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Tailored Trios</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Stargazing</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Hidden Gem Hunts</a></li>
+                  </ul>
+              </div>
+            </li>
+            <li> <!-- Travel Themes -->
+              <button id="dropdownNavbarLinkThemes" data-dropdown-toggle="dropdownNavbarThemes" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-hunter-green md:p-0 md:w-auto">Travel Themes <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg></button>
+              <!-- Dropdown menu -->
+              <div id="dropdownNavbarThemes" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                  <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownNavbarLinkThemes">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Wellness & Retreats</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Romance & Honeymoons 💞</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Thrill & Adventure</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Nature & Wildlife</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Urban Vibes 🏙️</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Food & Culture 🍲</a></li>
+                     <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Soul & Spiritual</a></li>
+                      <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Healing Escapes</a></li>
+                  </ul>
+              </div>
+            </li>
+             <li> <!-- Destinations -->
+              <button id="dropdownNavbarLinkDestinations" data-dropdown-toggle="dropdownNavbarDestinations" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-hunter-green md:p-0 md:w-auto">Destinations <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg></button>
+              <!-- Dropdown menu -->
+              <div id="dropdownNavbarDestinations" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-60">
+                  <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownNavbarLinkDestinations">
+                    <!-- Kenya -->
+                    <li>
+                      <button id="doubleDropdownButtonKenya" data-dropdown-toggle="doubleDropdownKenya" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100">Kenya<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg></button>
+                      <div id="doubleDropdownKenya" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                          <ul class="py-2 text-sm text-gray-700" aria-labelledby="doubleDropdownButtonKenya">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Nairobi</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Maasai Mara</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Diani Beach</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Lake Naivasha</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Mount Kenya</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Amboseli</a></li>
+                          </ul>
+                      </div>
+                    </li>
+                     <!-- Tanzania -->
+                    <li>
+                      <button id="doubleDropdownButtonTanzania" data-dropdown-toggle="doubleDropdownTanzania" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100">Tanzania<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg></button>
+                      <div id="doubleDropdownTanzania" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                          <ul class="py-2 text-sm text-gray-700" aria-labelledby="doubleDropdownButtonTanzania">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Serengeti</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Zanzibar</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Mount Kilimanjaro</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Ngorongoro Crater</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Arusha</a></li>
+                             <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Lake Manyara</a></li>
+                          </ul>
+                      </div>
+                    </li>
+                  </ul>
+              </div>
+            </li>
+            <li> <!-- About Us -->
+              <button id="dropdownNavbarLinkAbout" data-dropdown-toggle="dropdownNavbarAbout" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-hunter-green md:p-0 md:w-auto">About Us <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg></button>
+              <!-- Dropdown menu -->
+              <div id="dropdownNavbarAbout" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                  <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownNavbarLinkAbout">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Why Magical Savannah</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">The Team</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Private Tours</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Trip Coordinators</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Referral Program</a></li>
+                     <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a></li>
+                  </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <main>
-        <!-- Hero Section: Focus on Emotion & Connection -->
-        <section id="hero" class="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-savannah-brown-light via-savannah-bg to-savannah-bg">
-             <div class="absolute inset-0 opacity-10 bg-fixed" style="background-image: url('https://placehold.co/1920x1080/EADDCD/B08968?text=Subtle+Savannah+Pattern'); background-size: cover;"></div>
-            <div class="container mx-auto px-4 relative z-10 text-center fade-in">
-                <h1 class="text-4xl lg:text-6xl font-extrabold text-savannah-brown-dark mb-4 leading-tight">
-                    Don't Just Travel. <span class="text-savannah-orange">Feel the Journey.</span>
-                </h1>
-                <p class="text-lg md:text-xl text-savannah-brown-dark max-w-3xl mx-auto mb-8">
-                    Discover unforgettable adventures in Kenya & Tanzania, curated by emotion and shared with an amazing community. Create memories that last a lifetime.
-                </p>
-                <a href="#discover" class="inline-block bg-savannah-orange text-white font-semibold px-8 py-3 rounded-lg hover:bg-savannah-orange-dark transition duration-300 text-lg shadow-lg">
-                    Start Your Adventure
-                </a>
-                 <!-- Optional: Subtle imagery hint below CTA -->
-                 <img src="https://placehold.co/800x400/FCF9F5/B08968?text=People+Connecting+in+Savannah+Silhouette" alt="People enjoying savannah silhouette" class="mt-12 mx-auto rounded-lg opacity-80 max-w-xl"/>
+        <!-- 1. Hero Section -->
+        <section class="relative bg-cover bg-center min-h-[calc(100vh-80px)] md:min-h-screen flex items-center justify-center text-center" style="background-image: url('https://source.unsplash.com/1920x1080/?maasai-mara-sunrise')">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-off-black opacity-50"></div>
+            <!-- Content -->
+            <div class="relative z-10 max-w-3xl mx-auto px-4 text-white">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Not just places—<br class="hidden md:inline">memories for a lifetime.</h1>
+                <p class="text-lg md:text-xl mb-8">Discover the magic of Kenya & Tanzania with curated travel experiences.</p>
+                <a href="#" class="bg-savannah-gold hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105 inline-block">Start Your Journey Today</a>
+                <!-- Optional mini-search -->
+                <div class="mt-10 max-w-md mx-auto hidden md:block">
+                    <label for="feel-search" class="sr-only">How do you want to feel?</label>
+                    <input type="text" id="feel-search" class="w-full p-3 rounded-lg bg-white/80 text-off-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-hunter-green" placeholder="How do you want to feel? (e.g., Relaxed, Thrilled)">
+                </div>
             </div>
         </section>
 
-        <!-- Emotion-Based Discovery Section -->
-        <section id="discover" class="py-16 md:py-20 bg-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold text-savannah-brown-dark mb-4">How Do You Want to Feel?</h2>
-                <p class="text-savannah-brown-dark max-w-xl mx-auto mb-10">Select a mood, and we'll suggest experiences tailored just for you.</p>
-                <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-                    <!-- Replace # with links to filtered results (requires JS/Backend) -->
-                    <a href="#" class="px-6 py-3 bg-savannah-blue/20 text-savannah-brown-dark font-semibold rounded-full hover:bg-savannah-blue/40 transition duration-300 flex items-center space-x-2">
-                        <svg class="w-5 h-5 text-savannah-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>
-                        <span>Peaceful</span>
+        <!-- 2. Emotion-Based Discovery Module -->
+        <section class="py-16 px-4 bg-savannah-sand/30">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-hunter-green mb-10">How do you want this trip to make you feel?</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <a href="#" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl block mb-3">😌</span>
+                        <span class="font-semibold text-lg text-off-black">Peaceful</span>
                     </a>
-                    <a href="#" class="px-6 py-3 bg-savannah-orange/20 text-savannah-brown-dark font-semibold rounded-full hover:bg-savannah-orange/40 transition duration-300 flex items-center space-x-2">
-                        <svg class="w-5 h-5 text-savannah-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.985-2.122A3.75 3.75 0 0012 18z" /></svg>
-                        <span>Excited</span>
+                     <a href="#" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl block mb-3">🏃</span>
+                        <span class="font-semibold text-lg text-off-black">Adventurous</span>
                     </a>
-                    <a href="#" class="px-6 py-3 bg-red-200 text-savannah-brown-dark font-semibold rounded-full hover:bg-red-300 transition duration-300 flex items-center space-x-2">
-                        <svg class="w-5 h-5 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
-                        <span>Romantic</span>
+                     <a href="#" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl block mb-3">💞</span>
+                        <span class="font-semibold text-lg text-off-black">Romantic</span>
                     </a>
-                    <a href="#" class="px-6 py-3 bg-savannah-green/20 text-savannah-brown-dark font-semibold rounded-full hover:bg-savannah-green/40 transition duration-300 flex items-center space-x-2">
-                         <svg class="w-5 h-5 text-savannah-green" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
-                        <span>Adventurous</span>
+                     <a href="#" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl block mb-3">🌿</span>
+                        <span class="font-semibold text-lg text-off-black">Rejuvenated</span>
                     </a>
-                     <a href="#" class="px-6 py-3 bg-purple-200 text-savannah-brown-dark font-semibold rounded-full hover:bg-purple-300 transition duration-300 flex items-center space-x-2">
-                         <svg class="w-5 h-5 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-4.5m0 4.5a3 3 0 003-3h-15a3 3 0 003 3m9 0V9.75m-9 9V9.75m0 9a3 3 0 01-3-3H2.25a3 3 0 01-3-3V6.75a3 3 0 013-3h15a3 3 0 013 3v6.75a3 3 0 01-3 3H19.5a3 3 0 01-3 3m-9-9h9" /></svg>
-                        <span>Healing</span>
+                     <a href="#" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300">
+                        <span class="text-4xl block mb-3">🤩</span>
+                        <span class="font-semibold text-lg text-off-black">Spontaneous</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Experience Types Section -->
-        <section id="experiences" class="py-16 md:py-20 bg-savannah-bg">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-savannah-brown-dark mb-12">Curated Experiences Just For You</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Card 1: Mood-Driven Package -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                        <img class="w-full h-56 object-cover" src="https://placehold.co/600x400/A6D8D4/386641?text=Healing+Retreat+Image" alt="Serene landscape">
-                        <div class="p-6 flex-grow">
-                            <p class="text-sm font-medium text-savannah-green mb-1">Healing Retreats</p>
-                            <h3 class="text-xl font-semibold tracking-tight text-savannah-brown-dark mb-2">Find Your Inner Peace</h3>
-                            <p class="text-sm font-normal text-savannah-brown-dark/80 mb-4">Reconnect with yourself amidst tranquil nature. Yoga, meditation, and mindful exploration.</p>
-                        </div>
-                        <div class="p-6 pt-0">
-                            <a href="#" class="inline-block w-full text-center bg-savannah-green text-white font-medium px-5 py-2.5 rounded-lg hover:bg-savannah-green-dark transition duration-300">Explore Healing Trips</a>
+        <!-- 3. Featured Experiences -->
+        <section class="py-16 px-4">
+             <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-hunter-green mb-10 text-center">Handpicked Magical Experiences</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Tailored Trios -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://source.unsplash.com/800x600/?kenya-map-journey" alt="Tailored Trios Concept" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-hunter-green mb-2">Tailored Trios</h3>
+                            <p class="text-gray-600 mb-4">Curated 3-stop journeys balancing adventure, relaxation, and culture.</p>
+                            <a href="#" class="text-savannah-gold hover:underline font-medium">Explore Trios</a>
                         </div>
                     </div>
-
-                    <!-- Card 2: Group Tour by Vibe -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                         <img class="w-full h-56 object-cover" src="https://placehold.co/600x400/F97316/FFFFFF?text=Thrill+Seeker+Group+Activity" alt="People rafting or hiking">
-                        <div class="p-6 flex-grow">
-                            <p class="text-sm font-medium text-savannah-orange mb-1">Group Tours: Thrill-Seekers</p>
-                             <h3 class="text-xl font-semibold tracking-tight text-savannah-brown-dark mb-2">Chase the Adrenaline Rush</h3>
-                            <p class="text-sm font-normal text-savannah-brown-dark/80 mb-4">Join fellow adventurers for high-energy activities like climbing, rafting, and wildlife pursuits.</p>
-                        </div>
-                        <div class="p-6 pt-0">
-                            <a href="#" class="inline-block w-full text-center bg-savannah-orange text-white font-medium px-5 py-2.5 rounded-lg hover:bg-savannah-orange-dark transition duration-300">Join a Thrill Group</a>
-                         </div>
-                    </div>
-
-                     <!-- Card 3: Random/Mystery Group Tour -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                         <img class="w-full h-56 object-cover" src="https://placehold.co/600x400/7F5539/FFFFFF?text=Mystery+Location+Concept" alt="Question mark over a map">
-                        <div class="p-6 flex-grow">
-                            <p class="text-sm font-medium text-savannah-brown-dark mb-1">The Ultimate Adventure</p>
-                            <h3 class="text-xl font-semibold tracking-tight text-savannah-brown-dark mb-2">Dare for a Mystery Trip?</h3>
-                            <p class="text-sm font-normal text-savannah-brown-dark/80 mb-4">Ready for pure spontaneity? Join a group of strangers on an adventure revealed only before departure!</p>
-                        </div>
-                         <div class="p-6 pt-0">
-                             <a href="#" class="inline-block w-full text-center bg-savannah-brown-dark text-white font-medium px-5 py-2.5 rounded-lg hover:bg-black transition duration-300">I'm Feeling Lucky!</a>
+                    <!-- Stargazing Nights -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://source.unsplash.com/800x600/?african-night-sky-stars" alt="Stargazing in the Savannah" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-hunter-green mb-2">Stargazing Nights 🌌</h3>
+                            <p class="text-gray-600 mb-4">Witness the breathtaking African night sky far from city lights.</p>
+                            <a href="#" class="text-savannah-gold hover:underline font-medium">Look Up</a>
                         </div>
                     </div>
-                     <!-- Add more cards for Wild Escapes, Heartbeat Cities, Age groups etc. -->
+                     <!-- Hidden Gem Hunts -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://source.unsplash.com/800x600/?secret-waterfall-kenya" alt="Discovering a Hidden Gem" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-hunter-green mb-2">Hidden Gem Hunts 🔍</h3>
+                            <p class="text-gray-600 mb-4">Go off the beaten path to find truly unique spots and experiences.</p>
+                            <a href="#" class="text-savannah-gold hover:underline font-medium">Start Hunting</a>
+                        </div>
+                    </div>
+                    <!-- Surprise Me -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://source.unsplash.com/800x600/?mystery-travel-adventure" alt="Surprise Adventure" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-hunter-green mb-2">"Surprise Me" Adventures ✨</h3>
+                            <p class="text-gray-600 mb-4">Feeling spontaneous? Let us pick your next magical journey!</p>
+                            <a href="#" class="text-savannah-gold hover:underline font-medium">I'm Feeling Lucky</a>
+                        </div>
+                    </div>
+                    <!-- TravelMatch -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://source.unsplash.com/800x600/?friends-traveling-together" alt="Travel Companions" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-hunter-green mb-2">TravelMatch™ ❤️</h3>
+                            <p class="text-gray-600 mb-4">Find your perfect travel companions based on vibe and interests.</p>
+                            <a href="#" class="text-savannah-gold hover:underline font-medium">Find Your Match</a>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+        </section>
+
+        <!-- 4. Top Destinations (Carousel) -->
+        <section class="py-16 px-4 bg-hunter-green/10">
+            <div class="max-w-6xl mx-auto">
+                 <h2 class="text-3xl md:text-4xl font-bold text-hunter-green mb-10 text-center">Explore Iconic Destinations</h2>
+                <div id="destinations-carousel" class="relative w-full" data-carousel="slide">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-80 overflow-hidden rounded-lg md:h-96">
+                         <!-- Item 1: Maasai Mara -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://source.unsplash.com/1200x800/?maasai-mara-wildlife" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover h-full" alt="Maasai Mara">
+                             <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/70 to-transparent text-white">
+                                <h3 class="text-2xl font-semibold">Maasai Mara, Kenya</h3>
+                                <p class="text-sm mt-1">Iconic safaris, Great Migration | <span class="bg-savannah-gold/80 text-black px-2 py-0.5 rounded text-xs">Adventurous</span></p>
+                             </div>
+                        </div>
+                        <!-- Item 2: Serengeti -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                            <img src="https://source.unsplash.com/1200x800/?serengeti-tanzania" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover h-full" alt="Serengeti">
+                             <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/70 to-transparent text-white">
+                                <h3 class="text-2xl font-semibold">Serengeti, Tanzania</h3>
+                                <p class="text-sm mt-1">Endless plains, abundant wildlife | <span class="bg-savannah-gold/80 text-black px-2 py-0.5 rounded text-xs">Nature</span></p>
+                             </div>
+                        </div>
+                        <!-- Item 3: Zanzibar -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://source.unsplash.com/1200x800/?zanzibar-beach-turquoise" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover h-full" alt="Zanzibar">
+                              <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/70 to-transparent text-white">
+                                <h3 class="text-2xl font-semibold">Zanzibar, Tanzania</h3>
+                                <p class="text-sm mt-1">Spice island, pristine beaches | <span class="bg-sky-500/80 text-white px-2 py-0.5 rounded text-xs">Romantic</span> <span class="bg-emerald-500/80 text-white px-2 py-0.5 rounded text-xs">Peaceful</span></p>
+                             </div>
+                        </div>
+                         <!-- Item 4: Mount Kenya -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://source.unsplash.com/1200x800/?mount-kenya-peak" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover h-full" alt="Mount Kenya">
+                             <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/70 to-transparent text-white">
+                                <h3 class="text-2xl font-semibold">Mount Kenya, Kenya</h3>
+                                <p class="text-sm mt-1">Hiking challenges, alpine scenery | <span class="bg-red-500/80 text-white px-2 py-0.5 rounded text-xs">Thrill</span></p>
+                             </div>
+                        </div>
+                        <!-- Item 5: Ngorongoro Crater -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://source.unsplash.com/1200x800/?ngorongoro-crater-wildlife" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover h-full" alt="Ngorongoro Crater">
+                             <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/70 to-transparent text-white">
+                                <h3 class="text-2xl font-semibold">Ngorongoro Crater, Tanzania</h3>
+                                <p class="text-sm mt-1">Unique ecosystem, dense wildlife | <span class="bg-savannah-gold/80 text-black px-2 py-0.5 rounded text-xs">Nature</span></p>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- Slider indicators -->
+                    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/></svg>
+                            <span class="sr-only">Previous</span>
+                        </span>
+                    </button>
+                    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
+                            <span class="sr-only">Next</span>
+                        </span>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Community Spotlight Section -->
-        <section id="community" class="py-16 md:py-20 bg-white">
-             <div class="container mx-auto px-4">
-                 <h2 class="text-3xl font-bold text-center text-savannah-brown-dark mb-4">Connect with Fellow Trekkers</h2>
-                 <p class="text-center text-savannah-brown-dark/80 max-w-2xl mx-auto mb-12">Share stories, find travel buddies, and be inspired by our vibrant community. Your next adventure partner might be here!</p>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                     <!-- Example User Story/Highlight Card -->
-                    <div class="bg-savannah-bg p-6 rounded-xl border border-gray-200/80 text-center">
-                         <img class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-md" src="https://placehold.co/100x100/B08968/FFFFFF?text=User1" alt="User profile picture">
-                         <h4 class="font-semibold text-savannah-brown-dark">"My Maasai Mara Miracle"</h4>
-                         <p class="text-sm text-savannah-brown-dark/80 mt-2 mb-4 italic">"Seeing the great migration with my 'Mystery Group' was life-changing! We started as strangers, ended as family." - Sarah K.</p>
-                         <a href="#" class="text-sm text-savannah-orange hover:underline">Read Full Story</a>
-                    </div>
-                     <div class="bg-savannah-bg p-6 rounded-xl border border-gray-200/80 text-center">
-                         <img class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-md" src="https://placehold.co/100x100/6A994E/FFFFFF?text=User2" alt="User profile picture">
-                         <h4 class="font-semibold text-savannah-brown-dark">"Zanzibar Blues & Bliss"</h4>
-                         <p class="text-sm text-savannah-brown-dark/80 mt-2 mb-4 italic">"Found my travel soulmate via the quiz! Our Zanzibar trip was pure magic. Perfect mix of chill and culture." - David L.</p>
-                         <a href="#" class="text-sm text-savannah-orange hover:underline">Watch Their Vlog</a>
-                    </div>
-                     <div class="bg-savannah-bg p-6 rounded-xl border border-gray-200/80 text-center">
-                         <img class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-md" src="https://placehold.co/100x100/7F5539/FFFFFF?text=User3" alt="User profile picture">
-                         <h4 class="font-semibold text-savannah-brown-dark">"Kilimanjaro Conquered!"</h4>
-                         <p class="text-sm text-savannah-brown-dark/80 mt-2 mb-4 italic">"Joined the 'Over 40s Adventure' group. The support was incredible! Reached the summit thanks to my new friends." - Aisha B.</p>
-                          <a href="#" class="text-sm text-savannah-orange hover:underline">See Trip Photos</a>
-                    </div>
-                </div>
-
+        <!-- 5. Stories that Moved Us -->
+        <section class="py-16 px-4">
+            <div class="max-w-6xl mx-auto">
+                 <h2 class="text-3xl md:text-4xl font-bold text-hunter-green mb-10 text-center">Stories That Moved Us 🏆</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Story of the Month Spotlight -->
+                     <div class="md:col-span-2 lg:col-span-1 bg-savannah-sand/50 rounded-lg shadow-lg p-6 border-l-4 border-savannah-gold">
+                         <h3 class="text-xl font-semibold text-hunter-green mb-3">Story of the Month: Sarah's Serengeti Sunrise</h3>
+                         <img src="https://source.unsplash.com/800x600/?serengeti-hot-air-balloon" alt="Serengeti Sunrise" class="w-full h-40 object-cover rounded-md mb-4">
+                         <p class="text-gray-600 italic mb-4">"Floating above the plains as the sun painted the sky... it was pure magic. An experience I'll cherish forever thanks to The Magical Savannah!"</p>
+                         <a href="#" class="text-hunter-green hover:underline font-medium">Read Sarah's Full Story</a>
+                     </div>
+                     <!-- Other Story Card -->
+                     <div class="bg-white rounded-lg shadow-md p-6">
+                         <h3 class="text-lg font-semibold text-hunter-green mb-2">Finding Peace in Diani</h3>
+                         <p class="text-gray-600 text-sm mb-3">"The Tailored Trio to Diani was exactly the reset I needed. The beach, the calm, the people..."</p>
+                         <a href="#" class="text-savannah-gold hover:underline text-sm font-medium">Read More</a>
+                     </div>
+                     <!-- Other Story Card (Video Placeholder) -->
+                      <div class="bg-white rounded-lg shadow-md p-6">
+                          <div class="aspect-w-16 aspect-h-9 mb-3">
+                             <!-- Placeholder for video thumbnail -->
+                             <img src="https://source.unsplash.com/800x450/?kenya-vlog-travel" class="w-full h-full object-cover rounded-md" alt="Travel Vlog Thumbnail">
+                          </div>
+                         <h3 class="text-lg font-semibold text-hunter-green mb-2">Our Group Adventure Vlog!</h3>
+                         <p class="text-gray-600 text-sm mb-3">"Check out the highlights from our amazing random adventurer squad trip to Amboseli!"</p>
+                         <a href="#" class="text-savannah-gold hover:underline text-sm font-medium">Watch Video</a>
+                     </div>
+                 </div>
                  <div class="text-center">
-                      <a href="#" class="inline-block bg-savannah-brown text-white font-semibold px-8 py-3 rounded-lg hover:bg-savannah-brown-dark transition duration-300 text-lg shadow-lg mr-4">Join the Community Hub</a>
-                     <a href="#stories" class="inline-block border border-savannah-orange text-savannah-orange font-semibold px-8 py-3 rounded-lg hover:bg-savannah-orange/10 transition duration-300 text-lg">Read More Stories</a>
+                     <a href="#" class="bg-hunter-green hover:bg-green-800 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out">Share Your Story & Win a Trip!</a>
                  </div>
             </div>
         </section>
 
-         <!-- TravelMatch™ / Connect Section -->
-        <section id="connect" class="py-16 md:py-20 bg-savannah-green/10">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold text-savannah-brown-dark mb-4">Adventure is Better Together</h2>
-                 <p class="text-savannah-brown-dark max-w-xl mx-auto mb-10">Looking for the perfect travel companion? Find someone who matches your vibe, interests, or desired trip mood.</p>
-                 <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-                      <!-- CTA for TravelMatch (links to feature page/modal) -->
-                     <a href="#" class="bg-savannah-orange text-white font-semibold px-8 py-3 rounded-lg hover:bg-savannah-orange-dark transition duration-300 text-lg shadow-lg flex items-center space-x-2">
-                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                         <span>Try TravelMatch™ (Swipe!)</span>
-                    </a>
-                    <!-- CTA for Soulmate Quiz (links to feature page/modal) -->
-                     <a href="#" class="border border-savannah-brown text-savannah-brown font-semibold px-8 py-3 rounded-lg hover:bg-savannah-brown/10 transition duration-300 text-lg flex items-center space-x-2">
-                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
-                         <span>Take the Travel Soulmate Quiz</span>
-                     </a>
-                 </div>
-                 <p class="text-sm text-savannah-brown-dark/70 mt-6">Find platonic or romantic connections for your next big adventure!</p>
-             </div>
-        </section>
-
-         <!-- User Stories / Blog Section Teaser -->
-        <section id="stories" class="py-16 md:py-20 bg-white">
-             <div class="container mx-auto px-4">
-                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-savannah-brown-dark mb-4">Tales from the Savannah</h2>
-                    <p class="text-savannah-brown-dark/80 max-w-2xl mx-auto">Get inspired by real travel stories, tips, and vlogs from our amazing community. Maybe you'll be our next Story of the Month winner!</p>
-                 </div>
-                <!-- Simple grid showing blog post snippets - Requires dynamic loading -->
-                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                     <div class="bg-savannah-bg rounded-lg overflow-hidden border border-gray-200/80">
-                         <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/EADDCD/7F5539?text=Blog+Post+1" alt="Blog post image">
-                         <div class="p-5">
-                             <h4 class="font-semibold mb-2 text-lg hover:text-savannah-orange"><a href="#">My First Solo Trip: Facing Fears in Amboseli</a></h4>
-                             <p class="text-sm text-savannah-brown-dark/70 mb-3">By Alex R. | Aug 20, 2024</p>
-                             <a href="#" class="text-sm text-savannah-orange font-medium hover:underline">Read More →</a>
-                         </div>
-                     </div>
-                     <div class="bg-savannah-bg rounded-lg overflow-hidden border border-gray-200/80">
-                         <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/B08968/FFFFFF?text=Blog+Post+2" alt="Blog post image">
-                         <div class="p-5">
-                             <h4 class="font-semibold mb-2 text-lg hover:text-savannah-orange"><a href="#">Hidden Gems of Nairobi: A Foodie's Guide</a></h4>
-                             <p class="text-sm text-savannah-brown-dark/70 mb-3">By Chloe T. | Aug 18, 2024</p>
-                             <a href="#" class="text-sm text-savannah-orange font-medium hover:underline">Read More →</a>
-                         </div>
-                     </div>
-                      <div class="bg-savannah-bg rounded-lg overflow-hidden border border-gray-200/80">
-                         <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/6A994E/FFFFFF?text=Vlog+Thumbnail" alt="Vlog thumbnail">
-                         <div class="p-5">
-                             <h4 class="font-semibold mb-2 text-lg hover:text-savannah-orange"><a href="#">[VLOG] Stargazing Magic in the Serengeti</a></h4>
-                             <p class="text-sm text-savannah-brown-dark/70 mb-3">By Omar S. | Aug 15, 2024</p>
-                             <a href="#" class="text-sm text-savannah-orange font-medium hover:underline">Watch Video →</a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="text-center mt-12">
-                     <a href="#" class="text-lg text-savannah-orange font-semibold hover:underline">Explore All Stories & Vlogs</a>
-                 </div>
-             </div>
-        </section>
-
-        <!-- Why Choose Us / How It Works (Simplified) -->
-        <section id="why-us" class="py-16 md:py-20 bg-savannah-brown-light">
-            <div class="container mx-auto px-4">
-                 <h2 class="text-3xl font-bold text-center text-savannah-brown-dark mb-12">Your Journey, Reimagined</h2>
-                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                    <div class="flex flex-col items-center">
-                         <div class="bg-savannah-orange text-white rounded-full p-4 mb-4 inline-block shadow-md">
-                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
-                         </div>
-                         <h3 class="text-xl font-semibold text-savannah-brown-dark mb-2">Emotion-Led Discovery</h3>
-                         <p class="text-sm text-savannah-brown-dark/80">Find trips based on how you want to feel, not just where you want to go.</p>
+         <!-- 6. Group Travel & Community -->
+        <section class="py-16 px-4 bg-savannah-sand/30">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-hunter-green mb-6">Travel Together, Create Connections</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-10">Meet like-minded adventurers! We organise trips for specific age groups, random squads ready for anything, and unforgettable company retreats.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Age-based groups -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                         <span class="text-3xl block mb-3">🎂</span>
+                         <h3 class="text-xl font-semibold text-hunter-green mb-2">Age-Focused Trips</h3>
+                         <p class="text-gray-600">Connect with peers in your age range (e.g., 20s-30s, 40+, Family).</p>
                     </div>
-                     <div class="flex flex-col items-center">
-                         <div class="bg-savannah-green text-white rounded-full p-4 mb-4 inline-block shadow-md">
-                             <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                         </div>
-                         <h3 class="text-xl font-semibold text-savannah-brown-dark mb-2">Community Connection</h3>
-                         <p class="text-sm text-savannah-brown-dark/80">Travel with like-minded people, join group chats, and make lifelong friends.</p>
+                     <!-- Random squads -->
+                     <div class="bg-white p-6 rounded-lg shadow-md">
+                         <span class="text-3xl block mb-3">🚀</span>
+                         <h3 class="text-xl font-semibold text-hunter-green mb-2">Adventurer Squads</h3>
+                         <p class="text-gray-600">Join a randomly assigned group for maximum spontaneity!</p>
                     </div>
-                    <div class="flex flex-col items-center">
-                         <div class="bg-savannah-blue text-white rounded-full p-4 mb-4 inline-block shadow-md">
-                             <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L1.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.25 12l2.846.813a4.5 4.5 0 010 5.874l-2.846.813a4.5 4.5 0 01-5.874 0l-2.846-.813a4.5 4.5 0 010-5.874l2.846-.813a4.5 4.5 0 015.874 0z" /></svg>
-                         </div>
-                         <h3 class="text-xl font-semibold text-savannah-brown-dark mb-2">Curated Surprises</h3>
-                         <p class="text-sm text-savannah-brown-dark/80">From mystery trips to hidden gems, we add unexpected magic to your journey.</p>
+                     <!-- Enterprise tours -->
+                     <div class="bg-white p-6 rounded-lg shadow-md">
+                         <span class="text-3xl block mb-3">🤝</span>
+                         <h3 class="text-xl font-semibold text-hunter-green mb-2">Team Escapes</h3>
+                         <p class="text-gray-600">Boost morale with unique corporate travel experiences.</p>
                     </div>
-                 </div>
-             </div>
-        </section>
-
-        <!-- Enterprise Section Teaser -->
-         <section id="enterprise" class="py-16 bg-savannah-brown-dark text-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-4">Elevate Your Team's Experience?</h2>
-                <p class="max-w-xl mx-auto mb-8 text-savannah-bg/80">We craft unique team-building adventures and corporate retreats in the heart of East Africa. Let's plan something unforgettable for your organization.</p>
-                <a href="mailto:inquiries@themagicalsavannah.com?subject=Enterprise%20Tour%20Inquiry" class="inline-block bg-white text-savannah-brown-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-200 transition duration-300 text-lg shadow-lg">Inquire About Business Tours</a>
+                </div>
+                <!-- Placeholder for group chat/reviews -->
+                <div class="mt-10 bg-gray-200 p-4 rounded-lg max-w-md mx-auto text-left text-sm text-gray-600 italic">
+                    "Met some amazing people on the Mara group trip! Felt like travelling with old friends. Highly recommend! - James K."
+                </div>
             </div>
         </section>
 
-        <!-- Newsletter handled in Footer -->
+        <!-- 7. For Businesses & Teams -->
+        <section class="py-16 px-4 text-center">
+             <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-hunter-green mb-4">Magical Escapes for Your Team</h2>
+                <p class="text-lg text-gray-700 mb-8">Elevate your corporate retreats and team-building events with bespoke travel planning designed to inspire and connect.</p>
+                <a href="#" class="bg-savannah-gold hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Plan a Team Escape</a>
+             </div>
+        </section>
+
+        <!-- 8. Newsletter CTA -->
+        <section class="py-16 px-4 bg-hunter-green text-white">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Get the Magic in Your Inbox ✨</h2>
+                <p class="text-lg mb-8 text-gray-200">New trips, last-minute surprises, stories that make you want to pack. Subscribe for your dose of wanderlust!</p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <label for="newsletter-email" class="sr-only">Email address</label>
+                    <input type="email" id="newsletter-email" class="flex-grow p-3 rounded-lg border border-gray-300 text-off-black focus:outline-none focus:ring-2 focus:ring-savannah-gold" placeholder="Enter your email" required>
+                    <button type="submit" class="bg-savannah-gold hover:bg-orange-500 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 9. Trust Signals -->
+        <section class="py-12 px-4 bg-gray-100">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-center text-2xl font-semibold text-gray-700 mb-8">Trusted by Travelers & Partners</h2>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                    <!-- Partner Logos (Placeholders) -->
+                    <div class="text-gray-500 text-sm font-medium">KATO Member</div>
+                    <div class="text-gray-500 text-sm font-medium">EcoTourism Kenya</div>
+                     <svg class="w-24 h-10 text-gray-400" fill="currentColor" viewBox="0 0 100 40"><text x="10" y="25" font-size="10">Partner Logo</text></svg> <!-- Placeholder SVG -->
+                     <svg class="w-24 h-10 text-gray-400" fill="currentColor" viewBox="0 0 100 40"><text x="10" y="25" font-size="10">Another Logo</text></svg> <!-- Placeholder SVG -->
+
+                    <!-- Payment Icons -->
+                    <div class="flex items-center gap-3">
+                        <img src="https://via.placeholder.com/50x30/ccc/000?text=Mpesa" alt="Mpesa" class="h-6">
+                        <img src="https://via.placeholder.com/50x30/ccc/000?text=Visa" alt="Visa" class="h-6">
+                         <img src="https://via.placeholder.com/50x30/ccc/000?text=PayPal" alt="PayPal" class="h-6">
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200/80">
-        <div class="container mx-auto px-4 py-12 md:py-16">
-            <!-- Newsletter Signup -->
-            <div class="bg-savannah-bg p-8 rounded-xl mb-12 text-center border border-gray-200/80">
-                 <h3 class="text-2xl font-semibold text-savannah-brown-dark mb-3">Get Travel Inspiration & Offers</h3>
-                 <p class="text-savannah-brown-dark/80 mb-6">Subscribe for personalized tips, community updates, and exclusive deals.</p>
-                 <form class="max-w-md mx-auto">
-                    <div class="flex items-center border border-gray-300 rounded-lg p-1 bg-white focus-within:ring-2 focus-within:ring-savannah-orange">
-                        <input type="email" name="email" class="flex-grow px-4 py-2 text-gray-700 bg-transparent border-none focus:outline-none" placeholder="Enter your email address" required>
-                        <button type="submit" class="bg-savannah-orange text-white font-semibold px-6 py-2 rounded-md hover:bg-savannah-orange-dark transition duration-300">Subscribe</button>
+    <footer class="bg-off-black text-gray-300">
+        <!-- Tier 1: Call to Adventure (Optional) -->
+        <div class="bg-gradient-to-r from-savannah-gold/80 to-hunter-green/80 text-off-black py-8 px-4 text-center">
+            <h3 class="text-2xl font-semibold mb-4">Ready to make memories that last a lifetime? 🌍✨</h3>
+            <div class="space-x-4">
+                <a href="#" class="bg-hunter-green hover:bg-green-800 text-white font-medium py-2 px-5 rounded-lg transition duration-300">Book Your Adventure</a>
+                <a href="#" class="bg-white hover:bg-gray-200 text-hunter-green font-medium py-2 px-5 rounded-lg transition duration-300">Surprise Me</a>
+            </div>
+        </div>
+
+        <!-- Tier 2: Main Footer Grid -->
+        <div class="max-w-screen-xl mx-auto py-12 px-4">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <!-- Col 1: Explore -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4 uppercase tracking-wider text-sm">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Emotion-Based Trips</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Surprise Me</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Group Adventures</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">TravelMatch™</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Tailored Trios</a></li>
+                    </ul>
+                </div>
+                <!-- Col 2: Destinations -->
+                 <div>
+                    <h4 class="font-semibold text-white mb-4 uppercase tracking-wider text-sm">Destinations</h4>
+                    <ul class="space-y-2">
+                        <li><span class="font-medium text-gray-400">Kenya</span>
+                            <ul class="pl-4 mt-1 space-y-1">
+                                <li><a href="#" class="hover:text-savannah-gold hover:underline">Maasai Mara</a></li>
+                                <li><a href="#" class="hover:text-savannah-gold hover:underline">Diani Beach</a></li>
+                                <li><a href="#" class="hover:text-savannah-gold hover:underline">Nairobi</a></li>
+                            </ul>
+                        </li>
+                         <li class="mt-2"><span class="font-medium text-gray-400">Tanzania</span>
+                            <ul class="pl-4 mt-1 space-y-1">
+                                <li><a href="#" class="hover:text-savannah-gold hover:underline">Serengeti</a></li>
+                                <li><a href="#" class="hover:text-savannah-gold hover:underline">Zanzibar</a></li>
+                                <li><a href="#" class="hover:text-savannah-gold hover:underline">Kilimanjaro</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                 <!-- Col 3: Experiences -->
+                 <div>
+                    <h4 class="font-semibold text-white mb-4 uppercase tracking-wider text-sm">Experiences</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Stargazing Nights</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Hidden Gem Hunts</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Story of the Month</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Healing Escapes</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Romance & Honeymoons</a></li>
+                    </ul>
+                </div>
+                 <!-- Col 4: About -->
+                 <div>
+                    <h4 class="font-semibold text-white mb-4 uppercase tracking-wider text-sm">About</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Why Magical Savannah</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Meet the Team</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Private Tours</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Trip Coordinators</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Referral Program</a></li>
+                        <li><a href="#" class="hover:text-savannah-gold hover:underline">Contact Us</a></li>
+                    </ul>
+                </div>
+                 <!-- Col 5: Stay Connected -->
+                 <div>
+                    <h4 class="font-semibold text-white mb-4 uppercase tracking-wider text-sm">Stay Connected</h4>
+                    <form class="mb-4">
+                         <label for="footer-email" class="sr-only">Email Newsletter</label>
+                         <input type="email" id="footer-email" placeholder="Your Email for Updates" class="w-full p-2 rounded bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-savannah-gold focus:border-savannah-gold text-sm">
+                         <button type="submit" class="w-full mt-2 bg-hunter-green hover:bg-green-800 text-white text-sm py-2 rounded transition duration-300">Subscribe</button>
+                    </form>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="..."></path></svg></a> <!-- Add SVG Paths -->
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Twitter X"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="..."></path></svg></a>
+                         <a href="#" class="text-gray-400 hover:text-white" aria-label="TikTok"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="..."></path></svg></a>
+                          <a href="#" class="text-gray-400 hover:text-white" aria-label="Facebook"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="..."></path></svg></a>
                     </div>
-                </form>
-            </div>
-
-            <!-- Footer Links -->
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
-                <!-- Logo & Social -->
-                <div class="col-span-2 md:col-span-1 mb-6 md:mb-0">
-                     <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse mb-4">
-                          <svg class="w-8 h-8 text-savannah-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19.313 10.96h1.668l7.875-7.875 1.667 1.667L9.333 6.85l1.667 1.667L19.04 3.46h1.668l-5.805 5.804 1.667 1.667L23.687 5.19h1.668L17.689 12l7.665 7.664h-1.668L18.96 14.96l-1.667-1.667-1.667 1.667 2.176 2.176-1.667 1.667-7.875-7.875h-1.668l5.804 5.805L12.31 23.687l-1.667-1.667L8.46 20.84l-1.667-1.667-1.667 1.667-5.805 5.805H1.667L9.332 18.96 3.46 13.04H1.667l4.448-5.853L1.813 1.813 12 1.667l6.147.647-3.62 3.62-4.448-4.448L12 0 6.115 5.19Z" /></svg>
-                        <span class="self-center text-lg font-semibold whitespace-nowrap text-savannah-brown-dark">The Magical Savannah</span>
-                    </a>
-                    <p class="text-savannah-brown-dark/70 mb-4">Follow our journey:</p>
-                     <div class="flex space-x-4">
-                       <a href="#" class="text-gray-500 hover:text-savannah-orange"><span class="sr-only">Facebook</span><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
-                       <a href="#" class="text-gray-500 hover:text-savannah-orange"><span class="sr-only">Instagram</span><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.001 1.802c-2.39 0-2.72.009-3.667.053-.924.044-1.517.205-2.02.39a3.008 3.008 0 00-1.15 1.15 3.007 3.007 0 00-.39 2.02c-.044.947-.053 1.277-.053 3.667s.009 2.72.053 3.667c.044.924.205 1.517.39 2.02a3.008 3.008 0 001.15 1.15 3.007 3.007 0 002.02.39c.947.044 1.277.053 3.667.053s2.72-.009 3.667-.053c.924-.044 1.517-.205 2.02-.39a3.008 3.008 0 001.15-1.15 3.007 3.007 0 00.39-2.02c.044-.947.053-1.277.053-3.667s-.009-2.72-.053-3.667c-.044-.924-.205-1.517-.39-2.02a3.008 3.008 0 00-1.15-1.15 3.007 3.007 0 00-2.02-.39c-.947-.044-1.277-.053-3.667-.053zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 1.802a3.333 3.333 0 110 6.666 3.333 3.333 0 010-6.666zm5.338-3.205a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z" clip-rule="evenodd" /></svg></a>
-                       <a href="#" class="text-gray-500 hover:text-savannah-orange"><span class="sr-only">TikTok</span><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.04-5.36-.01-4.03-.01-8.05.02-12.07z"/></svg></a>
-                     </div>
-                </div>
-
-                <!-- Link Columns -->
-                 <div>
-                    <h2 class="mb-4 font-semibold text-savannah-brown-dark uppercase">Explore</h2>
-                    <ul class="text-savannah-brown-dark/80 space-y-2">
-                        <li><a href="#experiences" class="hover:text-savannah-orange">Experiences by Mood</a></li>
-                        <li><a href="#experiences" class="hover:text-savannah-orange">Group Tours</a></li>
-                        <li><a href="#destinations" class="hover:text-savannah-orange">Destinations</a></li>
-                        <li><a href="#stories" class="hover:text-savannah-orange">Travel Stories</a></li>
-                        <li><a href="#connect" class="hover:text-savannah-orange">Find Travel Partners</a></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h2 class="mb-4 font-semibold text-savannah-brown-dark uppercase">Community</h2>
-                    <ul class="text-savannah-brown-dark/80 space-y-2">
-                        <li><a href="#" class="hover:text-savannah-orange">Community Hub</a></li>
-                        <li><a href="#" class="hover:text-savannah-orange">Submit Your Story</a></li>
-                        <li><a href="#" class="hover:text-savannah-orange">Story of the Month</a></li>
-                        <li><a href="#" class="hover:text-savannah-orange">Wishlist Raffle</a></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h2 class="mb-4 font-semibold text-savannah-brown-dark uppercase">Company</h2>
-                    <ul class="text-savannah-brown-dark/80 space-y-2">
-                        <li><a href="#" class="hover:text-savannah-orange">About Us</a></li>
-                        <li><a href="#" class="hover:text-savannah-orange">How It Works</a></li>
-                        <li><a href="#enterprise" class="hover:text-savannah-orange">For Business</a></li>
-                        <li><a href="mailto:inquiries@themagicalsavannah.com" class="hover:text-savannah-orange">Contact Us</a></li>
-                         <li><a href="#" class="hover:text-savannah-orange">Careers</a></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h2 class="mb-4 font-semibold text-savannah-brown-dark uppercase">Legal</h2>
-                     <ul class="text-savannah-brown-dark/80 space-y-2">
-                        <li><a href="#" class="hover:text-savannah-orange">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-savannah-orange">Terms & Conditions</a></li>
-                        <li><a href="#" class="hover:text-savannah-orange">Booking Policy</a></li>
-                         <li>
-                             <p class="mt-4 font-semibold">Payments Accepted:</p>
-                             <div class="flex space-x-2 mt-1">
-                                 <span class="text-xs font-medium bg-gray-200 px-1 py-0.5 rounded">Mpesa</span>
-                                 <span class="text-xs font-medium bg-gray-200 px-1 py-0.5 rounded">Visa</span>
-                                 <span class="text-xs font-medium bg-gray-200 px-1 py-0.5 rounded">MC</span>
-                                  <span class="text-xs font-medium bg-gray-200 px-1 py-0.5 rounded">PayPal</span>
-                             </div>
-                         </li>
-                    </ul>
+                    <a href="mailto:inquiries@themagicalsavannah.com" class="text-sm hover:text-savannah-gold hover:underline">inquiries@themagicalsavannah.com</a>
                 </div>
             </div>
-            <hr class="my-6 border-gray-200/80 sm:mx-auto lg:my-8" />
-            <div class="text-center text-sm text-savannah-brown-dark/70">
-                © 2024 <a href="#" class="hover:underline">The Magical Savannah™</a>. Feel the Journey. All Rights Reserved.
+        </div>
+
+        <!-- Tier 3: Legal + Extras -->
+        <div class="border-t border-gray-700 py-6 px-4">
+            <div class="max-w-screen-xl mx-auto text-center text-gray-500 text-xs">
+                <span>© 2025 The Magical Savannah. All rights reserved.</span>
+                <span class="mx-2">|</span>
+                <a href="#" class="hover:text-white hover:underline">Privacy Policy</a>
+                <span class="mx-2">|</span>
+                <a href="#" class="hover:text-white hover:underline">Terms of Use</a>
+                 <span class="mx-2">|</span>
+                <a href="#" class="hover:text-white hover:underline">Site Map</a>
+                 <span class="block mt-2 md:inline md:mt-0 md:ml-4">Made with ❤️ by <a href="#" class="hover:text-white hover:underline font-medium">@benexl</a></span> <!-- Replace # with actual link -->
             </div>
         </div>
     </footer>
